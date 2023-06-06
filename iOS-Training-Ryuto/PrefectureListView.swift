@@ -10,6 +10,18 @@ import SwiftUI
 struct PrefectureListView: View {
     @State private var searchText: String = ""
     
+    private var searchResults: [String] {
+        get {
+            if searchText.isEmpty { return [] }
+            else {
+                let filteredPrefectures = prefectures
+                    .flatMap { $0.1 }
+                    .filter { $0.contains(searchText) }
+                
+                return filteredPrefectures
+            }
+        }
+    }
     private let prefectures = [
         ("北海道", ["北海道"]),
         ("東北", ["青森県", "岩手県", "宮城県", "秋田県", "山形県", "福島県"]),
