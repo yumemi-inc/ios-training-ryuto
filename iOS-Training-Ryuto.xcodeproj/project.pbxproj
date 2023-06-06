@@ -15,6 +15,7 @@
 		D44310652A2F04F100F63095 /* iOS_Training_RyutoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44310642A2F04F100F63095 /* iOS_Training_RyutoUITests.swift */; };
 		D44310672A2F04F100F63095 /* iOS_Training_RyutoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44310662A2F04F100F63095 /* iOS_Training_RyutoUITestsLaunchTests.swift */; };
 		D44310742A2F086C00F63095 /* PrefectureListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44310732A2F086C00F63095 /* PrefectureListView.swift */; };
+		D44310762A2F0BD900F63095 /* PrefectureRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44310752A2F0BD900F63095 /* PrefectureRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		D44310642A2F04F100F63095 /* iOS_Training_RyutoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_Training_RyutoUITests.swift; sourceTree = "<group>"; };
 		D44310662A2F04F100F63095 /* iOS_Training_RyutoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_Training_RyutoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D44310732A2F086C00F63095 /* PrefectureListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefectureListView.swift; sourceTree = "<group>"; };
+		D44310752A2F0BD900F63095 /* PrefectureRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefectureRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				D44310492A2F04EF00F63095 /* iOS_Training_RyutoApp.swift */,
 				D443104B2A2F04EF00F63095 /* ContentView.swift */,
 				D44310732A2F086C00F63095 /* PrefectureListView.swift */,
+				D44310752A2F0BD900F63095 /* PrefectureRowView.swift */,
 				D443104D2A2F04F100F63095 /* Assets.xcassets */,
 				D443104F2A2F04F100F63095 /* Preview Content */,
 			);
@@ -262,6 +265,7 @@
 			files = (
 				D443104C2A2F04EF00F63095 /* ContentView.swift in Sources */,
 				D44310742A2F086C00F63095 /* PrefectureListView.swift in Sources */,
+				D44310762A2F0BD900F63095 /* PrefectureRowView.swift in Sources */,
 				D443104A2A2F04EF00F63095 /* iOS_Training_RyutoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
