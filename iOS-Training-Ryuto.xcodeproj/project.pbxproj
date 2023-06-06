@@ -14,6 +14,7 @@
 		D443105B2A2F04F100F63095 /* iOS_Training_RyutoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443105A2A2F04F100F63095 /* iOS_Training_RyutoTests.swift */; };
 		D44310652A2F04F100F63095 /* iOS_Training_RyutoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44310642A2F04F100F63095 /* iOS_Training_RyutoUITests.swift */; };
 		D44310672A2F04F100F63095 /* iOS_Training_RyutoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44310662A2F04F100F63095 /* iOS_Training_RyutoUITestsLaunchTests.swift */; };
+		D44310742A2F086C00F63095 /* PrefectureListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44310732A2F086C00F63095 /* PrefectureListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		D44310602A2F04F100F63095 /* iOS-Training-RyutoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS-Training-RyutoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D44310642A2F04F100F63095 /* iOS_Training_RyutoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_Training_RyutoUITests.swift; sourceTree = "<group>"; };
 		D44310662A2F04F100F63095 /* iOS_Training_RyutoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_Training_RyutoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D44310732A2F086C00F63095 /* PrefectureListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefectureListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				D44310492A2F04EF00F63095 /* iOS_Training_RyutoApp.swift */,
 				D443104B2A2F04EF00F63095 /* ContentView.swift */,
+				D44310732A2F086C00F63095 /* PrefectureListView.swift */,
 				D443104D2A2F04F100F63095 /* Assets.xcassets */,
 				D443104F2A2F04F100F63095 /* Preview Content */,
 			);
@@ -258,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D443104C2A2F04EF00F63095 /* ContentView.swift in Sources */,
+				D44310742A2F086C00F63095 /* PrefectureListView.swift in Sources */,
 				D443104A2A2F04EF00F63095 /* iOS_Training_RyutoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
