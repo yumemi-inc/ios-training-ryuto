@@ -17,6 +17,7 @@
 		D44310672A2F04F100F63095 /* iOS_Training_RyutoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44310662A2F04F100F63095 /* iOS_Training_RyutoUITestsLaunchTests.swift */; };
 		D44310742A2F086C00F63095 /* PrefectureListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44310732A2F086C00F63095 /* PrefectureListView.swift */; };
 		D44310762A2F0BD900F63095 /* PrefectureRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44310752A2F0BD900F63095 /* PrefectureRowView.swift */; };
+		D44310792A2F39A500F63095 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44310782A2F39A500F63095 /* WeatherView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		D44310662A2F04F100F63095 /* iOS_Training_RyutoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_Training_RyutoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D44310732A2F086C00F63095 /* PrefectureListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefectureListView.swift; sourceTree = "<group>"; };
 		D44310752A2F0BD900F63095 /* PrefectureRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefectureRowView.swift; sourceTree = "<group>"; };
+		D44310782A2F39A500F63095 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			children = (
 				D44310492A2F04EF00F63095 /* iOS_Training_RyutoApp.swift */,
 				D44310772A2F0CFA00F63095 /* PrefectureList */,
+				D44310782A2F39A500F63095 /* WeatherView.swift */,
 				D443104D2A2F04F100F63095 /* Assets.xcassets */,
 				D443104F2A2F04F100F63095 /* Preview Content */,
 			);
@@ -280,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D44310792A2F39A500F63095 /* WeatherView.swift in Sources */,
 				D44310742A2F086C00F63095 /* PrefectureListView.swift in Sources */,
 				D422ECB82A32F627005586AD /* Prefecture.swift in Sources */,
 				D44310762A2F0BD900F63095 /* PrefectureRowView.swift in Sources */,
