@@ -41,25 +41,13 @@ struct PrefectureListView: View {
                     ForEach(prefectures, id: \.0) { regionName, regionPrefectures in
                         Section(regionName) {
                             ForEach(regionPrefectures, id: \.self) { prefecture in
-                                HStack(spacing: 10) {
-                                    Image(prefecture)
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 50)
-                                    Text(prefecture)
-                                }
+                                PrefectureRowView(prefecture: prefecture)
                             }
                         }
                     }
                 } else {
                     ForEach(searchResults, id: \.self) { prefecture in
-                        HStack(spacing: 10) {
-                            Image(prefecture)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 50)
-                            Text(prefecture)
-                        }
+                        PrefectureRowView(prefecture: prefecture)
                     }
                 }
                 
