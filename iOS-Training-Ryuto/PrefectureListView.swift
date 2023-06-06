@@ -22,6 +22,7 @@ struct PrefectureListView: View {
             }
         }
     }
+    
     private let prefectures = [
         ("北海道", ["北海道"]),
         ("東北", ["青森県", "岩手県", "宮城県", "秋田県", "山形県", "福島県"]),
@@ -34,6 +35,7 @@ struct PrefectureListView: View {
         ("四国", ["徳島県", "香川県", "愛媛県", "高知県"]),
         ("九州", ["福岡県", "佐賀県", "長崎県", "熊本県", "大分県", "宮崎県", "鹿児島県", "沖縄県"])
     ]
+    
     var body: some View {
         NavigationView {
             List {
@@ -50,7 +52,6 @@ struct PrefectureListView: View {
                         PrefectureRowView(prefecture: prefecture)
                     }
                 }
-                
             }
             .navigationTitle("天気検索アプリ")
             .navigationBarTitleDisplayMode(.inline)
