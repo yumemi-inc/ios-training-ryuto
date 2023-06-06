@@ -8,13 +8,21 @@
 import SwiftUI
 
 struct PrefectureRowView: View {
+    let prefecture: String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack(spacing: 10) {
+            Image(prefecture)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 50)
+            Text(prefecture)
+        }
     }
 }
 
 struct PrefectureRowView_Previews: PreviewProvider {
     static var previews: some View {
-        PrefectureRowView()
+        PrefectureRowView(prefecture: "東京都")
     }
 }
