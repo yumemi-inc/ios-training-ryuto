@@ -96,13 +96,17 @@ struct PrefectureListView: View {
                     ForEach(regions, id: \.0) { region, prefectures in
                         Section(region) {
                             ForEach(prefectures) { prefecture in
-                                PrefectureRowView(prefecture: prefecture)
+                                NavigationLink(destination: WeatherView()) {
+                                    PrefectureRowView(prefecture: prefecture)
+                                }
                             }
                         }
                     }
                 } else {
                     ForEach(searchResults) { prefecture in
-                        PrefectureRowView(prefecture: prefecture)
+                        NavigationLink(destination: WeatherView()) {
+                            PrefectureRowView(prefecture: prefecture)
+                        }
                     }
                 }
             }
