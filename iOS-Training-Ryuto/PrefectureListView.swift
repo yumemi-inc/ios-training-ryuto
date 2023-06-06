@@ -21,20 +21,24 @@ struct PrefectureListView: View {
         ("九州", ["福岡県", "佐賀県", "長崎県", "熊本県", "大分県", "宮崎県", "鹿児島県", "沖縄県"])
     ]
     var body: some View {
-        List {
-            ForEach(prefectures, id: \.0) { regionName, regionPrefectures in
-                Section(regionName) {
-                    ForEach(regionPrefectures, id: \.self) { prefecture in
-                        HStack(spacing: 10) {
-                            Image(prefecture)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 50)
-                            Text(prefecture)
+        NavigationView {
+            List {
+                ForEach(prefectures, id: \.0) { regionName, regionPrefectures in
+                    Section(regionName) {
+                        ForEach(regionPrefectures, id: \.self) { prefecture in
+                            HStack(spacing: 10) {
+                                Image(prefecture)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 50)
+                                Text(prefecture)
+                            }
                         }
                     }
                 }
             }
+            .navigationTitle("天気検索アプリ")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
