@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct PrefectureListView: View {
+    @State private var searchText: String = ""
+    
     private let prefectures = [
         ("北海道", ["北海道"]),
         ("東北", ["青森県", "岩手県", "宮城県", "秋田県", "山形県", "福島県"]),
@@ -39,6 +41,8 @@ struct PrefectureListView: View {
             }
             .navigationTitle("天気検索アプリ")
             .navigationBarTitleDisplayMode(.inline)
+            .searchable(text: $searchText,
+                        placement: .navigationBarDrawer(displayMode: .always))
         }
     }
 }
