@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import YumemiWeather
 
 protocol YumemiWeatherAPIClientProtocol {
     var weather: PassthroughSubject<Weather, Error> { get set }
@@ -14,6 +15,20 @@ protocol YumemiWeatherAPIClientProtocol {
     func fetchWeatherCondition(jsonString: String)
 }
 
-final class YumemiWeatherAPIClient {
+final class YumemiWeatherAPIClient: YumemiWeatherAPIClientProtocol {
+    var weather = PassthroughSubject<Weather, Error>()
+    
+    func fetchWeatherCondition(jsonString: String) {
+        do {
+            let response = try YumemiWeather.fetchWeather(jsonString)
+            guard let responseData = response.data(using: .utf8) else { return }
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .iso8601 // Date型にデコードできるように指定
+            let weather = try decoder.decode(Weather.self, from: responseData)
+            self.weather.send(weather)
+        } catch {
+            self.weather.send(completion: .failure(error))
+        }
+    }
     
 }
