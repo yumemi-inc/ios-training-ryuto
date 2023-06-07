@@ -12,6 +12,7 @@ struct WeatherView: View {
     
     var body: some View {
         ZStack {
+            // 背景色を設定
             LinearGradient(gradient: Gradient(colors: [.blue, .cyan]),
                            startPoint: .top,
                            endPoint: .bottom)
@@ -72,6 +73,7 @@ struct WeatherView: View {
         }
         .navigationBarBackButtonHidden(true)
         .toolbar {
+            // 戻るボタン
             ToolbarItem(placement: .navigationBarLeading) {
                 Button {
                     dismiss()
@@ -83,6 +85,7 @@ struct WeatherView: View {
                     .foregroundColor(.white)
                 }
             }
+            // 再読み込みボタン
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
                     
