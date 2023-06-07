@@ -68,6 +68,12 @@ struct WeatherView: View {
             }
             .foregroundColor(.white)
         }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Image(systemName: "arrow.clockwise")
+                    .foregroundColor(.white)
+            }
+        }
     }
 }
 
