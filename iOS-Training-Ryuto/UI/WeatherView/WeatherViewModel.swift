@@ -21,6 +21,9 @@ final class WeatherViewModel: ObservableObject {
             .compactMap { $0 }
             .assign(to: \.weather, on: self)
             .store(in: &apiSubscriptions)
-        
+    }
+    
+    func fetchWeatherCondition(jsonString: String) {
+        yumemiWeatherAPIClient.fetchWeatherCondition(jsonString: jsonString)
     }
 }
