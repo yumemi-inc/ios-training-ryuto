@@ -12,4 +12,11 @@ struct Weather: Decodable {
     let date: Date
     let maxTemperature: Int
     let minTemperature: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case condition = "weather_condition"
+        case date
+        case maxTemperature = "max_temperature"
+        case minTemperature = "min_temperature"
+    }
 }
