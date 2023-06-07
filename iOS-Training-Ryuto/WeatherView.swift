@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct WeatherView: View {
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [.blue, .cyan]),
@@ -68,7 +70,19 @@ struct WeatherView: View {
             }
             .foregroundColor(.white)
         }
+        .navigationBarBackButtonHidden(true)
         .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button {
+                    dismiss()
+                } label: {
+                    HStack(spacing: 3) {
+                        Image(systemName: "chevron.backward")
+                        Text("戻る")
+                    }
+                    .foregroundColor(.white)
+                }
+            }
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
                     
