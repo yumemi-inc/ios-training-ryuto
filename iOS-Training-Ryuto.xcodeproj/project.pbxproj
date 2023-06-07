@@ -18,6 +18,7 @@
 		D44310742A2F086C00F63095 /* PrefectureListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44310732A2F086C00F63095 /* PrefectureListView.swift */; };
 		D44310762A2F0BD900F63095 /* PrefectureRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44310752A2F0BD900F63095 /* PrefectureRowView.swift */; };
 		D44310792A2F39A500F63095 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44310782A2F39A500F63095 /* WeatherView.swift */; };
+		D4FB92B52A306679000DCFC2 /* YumemiWeather in Frameworks */ = {isa = PBXBuildFile; productRef = D4FB92B42A306679000DCFC2 /* YumemiWeather */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D40CA1F12A385EC3009BE8AA /* RswiftLibrary in Frameworks */,
+				D4FB92B52A306679000DCFC2 /* YumemiWeather in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +183,7 @@
 			name = "iOS-Training-Ryuto";
 			packageProductDependencies = (
 				D40CA1F02A385EC3009BE8AA /* RswiftLibrary */,
+				D4FB92B42A306679000DCFC2 /* YumemiWeather */,
 			);
 			productName = "iOS-Training-Ryuto";
 			productReference = D44310462A2F04EF00F63095 /* iOS-Training-Ryuto.app */;
@@ -256,6 +259,7 @@
 			mainGroup = D443103D2A2F04EF00F63095;
 			packageReferences = (
 				D40CA1EF2A385EC3009BE8AA /* XCRemoteSwiftPackageReference "R.swift" */,
+				D4FB92B32A306679000DCFC2 /* XCRemoteSwiftPackageReference "ios-training" */,
 			);
 			productRefGroup = D44310472A2F04EF00F63095 /* Products */;
 			projectDirPath = "";
@@ -640,6 +644,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 7.0.0;
+            };
+        };
+		D4FB92B32A306679000DCFC2 /* XCRemoteSwiftPackageReference "ios-training" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yumemi-inc/ios-training.git";
+			requirement = {
+				branch = main;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -653,6 +665,11 @@
 		D40CA1F22A385ECE009BE8AA /* RswiftGenerateInternalResources */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = "plugin:RswiftGenerateInternalResources";
+        };
+		D4FB92B42A306679000DCFC2 /* YumemiWeather */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D4FB92B32A306679000DCFC2 /* XCRemoteSwiftPackageReference "ios-training" */;
+			productName = YumemiWeather;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
