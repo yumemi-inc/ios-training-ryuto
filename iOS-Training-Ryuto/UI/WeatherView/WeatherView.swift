@@ -25,6 +25,10 @@ struct WeatherView: View {
             }
             .foregroundColor(.white)
         }
+        .onAppear {
+            guard let json = try? JsonHelper.createJSON(["area": prefecture.id, "date": "2020-04-01T12:00:00+09:00"]) else { return }
+            viewModel.fetchWeatherCondition(jsonString: json)
+        }
         .toolbar {
             // 再読み込みボタン
             ToolbarItem(placement: .navigationBarTrailing) {
@@ -61,11 +65,30 @@ extension WeatherView {
     private func weatherDetailView() -> some View {
         VStack(spacing: 50) {
             HStack(spacing: 20) {
+                switch viewModel.weather?.condition {
+                case .sunny:
                     Image(systemName: "sun.max.fill")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 150, height: 150)
                         .foregroundColor(.orange)
+                    
+                case .cloudy:
+                    Image(systemName: "cloud.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 150, height: 150)
+                        .foregroundColor(.gray)
+                    
+                case .rainy:
+                    Image(systemName: "cloud.rain.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 150, height: 150)
+                        .foregroundColor(.blue)
+                case .none:
+                    ProgressView()
+                }
                 
                 VStack(alignment: .leading, spacing: 10) {
                     HStack(spacing: 3) {
@@ -73,7 +96,9 @@ extension WeatherView {
                             .resizable()
                             .scaledToFit()
                             .frame(width: 20, height: 20)
-                        Text("最高: 30°")
+                        if let weather = viewModel.weather {
+                            Text("最高: \(weather.maxTemperature)°")
+                        }
                     }
                     .foregroundColor(.red)
                     
@@ -82,7 +107,9 @@ extension WeatherView {
                             .resizable()
                             .scaledToFit()
                             .frame(width: 20, height: 20)
-                        Text("最低: 15°")
+                        if let weather = viewModel.weather {
+                            Text("最低: \(weather.minTemperature)°")
+                        }
                     }
                     .foregroundColor(.indigo)
                 }
