@@ -22,6 +22,7 @@
 		D4FB92B72A3066BF000DCFC2 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FB92B62A3066BF000DCFC2 /* Weather.swift */; };
 		D4FB92B92A3078A4000DCFC2 /* WeatherCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FB92B82A3078A3000DCFC2 /* WeatherCondition.swift */; };
 		D4FB92BB2A307CAE000DCFC2 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FB92BA2A307CAE000DCFC2 /* WeatherViewModel.swift */; };
+		D4FB92BD2A307F0A000DCFC2 /* YumemiWeatherAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FB92BC2A307F0A000DCFC2 /* YumemiWeatherAPIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		D4FB92B62A3066BF000DCFC2 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		D4FB92B82A3078A3000DCFC2 /* WeatherCondition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCondition.swift; sourceTree = "<group>"; };
 		D4FB92BA2A307CAE000DCFC2 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		D4FB92BC2A307F0A000DCFC2 /* YumemiWeatherAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YumemiWeatherAPIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				D44310492A2F04EF00F63095 /* iOS_Training_RyutoApp.swift */,
 				D4FB92B62A3066BF000DCFC2 /* Weather.swift */,
 				D4FB92B82A3078A3000DCFC2 /* WeatherCondition.swift */,
+				D4FB92BC2A307F0A000DCFC2 /* YumemiWeatherAPIClient.swift */,
 				D4FB92B22A3065D6000DCFC2 /* UI */,
 				D443104D2A2F04F100F63095 /* Assets.xcassets */,
 				D443104F2A2F04F100F63095 /* Preview Content */,
@@ -312,6 +315,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4FB92BD2A307F0A000DCFC2 /* YumemiWeatherAPIClient.swift in Sources */,
 				D44310792A2F39A500F63095 /* WeatherView.swift in Sources */,
 				D44310742A2F086C00F63095 /* PrefectureListView.swift in Sources */,
 				D422ECB82A32F627005586AD /* Prefecture.swift in Sources */,
