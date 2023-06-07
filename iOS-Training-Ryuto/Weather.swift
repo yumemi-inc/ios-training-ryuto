@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Weather {
+struct Weather: Decodable {
     let condition: String
     let date: Date
     let maxTemperature: Int
