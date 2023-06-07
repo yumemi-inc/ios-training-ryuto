@@ -70,8 +70,12 @@ struct WeatherView: View {
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                Image(systemName: "arrow.clockwise")
-                    .foregroundColor(.white)
+                Button {
+                    
+                } label: {
+                    Image(systemName: "arrow.clockwise")
+                        .foregroundColor(.white)
+                }
             }
         }
     }
