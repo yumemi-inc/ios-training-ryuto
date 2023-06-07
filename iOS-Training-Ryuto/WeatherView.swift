@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct WeatherView: View {
-    @Environment(\.dismiss) var dismiss
+    let prefecture: Prefecture
+    
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         ZStack {
@@ -19,7 +21,7 @@ struct WeatherView: View {
             .ignoresSafeArea()
             
             VStack {
-                Text("東京")
+                Text(prefecture.id)
                     .font(.title)
                     .fontWeight(.bold)
                     .padding(.top, 20)
@@ -100,6 +102,6 @@ struct WeatherView: View {
 
 struct WeatherView_Previews: PreviewProvider {
     static var previews: some View {
-        WeatherView()
+        WeatherView(prefecture: Prefecture(id: "東京都", imageName: "Tokyo"))
     }
 }
