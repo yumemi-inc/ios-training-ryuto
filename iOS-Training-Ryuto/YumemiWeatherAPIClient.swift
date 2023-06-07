@@ -8,6 +8,12 @@
 import Foundation
 import Combine
 
+protocol YumemiWeatherAPIClientProtocol {
+    var weather: PassthroughSubject<Weather, Error> { get set }
+    
+    func fetchWeatherCondition(jsonString: String)
+}
+
 final class YumemiWeatherAPIClient {
     
 }
