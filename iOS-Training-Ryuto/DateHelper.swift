@@ -23,6 +23,10 @@ final class DateHelper {
 }
 
 extension DateHelper {
+    func formatToString(date: Date, dateFormat: String) -> String {
+        dateFormatter.dateFormat = dateFormat
+        return dateFormatter.string(from: date)
+    }
     func dateToISO8601String(date: Date) -> String {
         return iso8601DateFormatter.string(from: date)
     }
