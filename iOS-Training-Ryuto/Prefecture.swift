@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Prefecture {
-    let name: String
+struct Prefecture: Identifiable {
+    let id: String
     let imageName: String
 }
