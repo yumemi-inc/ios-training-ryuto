@@ -20,4 +20,15 @@ enum WeatherCondition: String, Decodable {
         default      : self = .sunny
         }
     }
+    
+    var rawValue: String {
+        switch self {
+        case .sunny:
+            return "晴れ"
+        case .cloudy:
+            return "曇り"
+        case .rainy:
+            return "雨"
+        }
+    }
 }
