@@ -10,6 +10,7 @@
 		D40CA1F12A385EC3009BE8AA /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = D40CA1F02A385EC3009BE8AA /* RswiftLibrary */; };
 		D422ECB82A32F627005586AD /* Prefecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = D422ECB72A32F627005586AD /* Prefecture.swift */; };
 		D422ECAF2A32AEE2005586AD /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D422ECAE2A32AEE2005586AD /* DateHelper.swift */; };
+		D422ECB62A32D993005586AD /* YumemiWetherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D422ECB52A32D993005586AD /* YumemiWetherRequest.swift */; };
 		D443104A2A2F04EF00F63095 /* iOS_Training_RyutoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44310492A2F04EF00F63095 /* iOS_Training_RyutoApp.swift */; };
 		D443104E2A2F04F100F63095 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D443104D2A2F04F100F63095 /* Assets.xcassets */; };
 		D44310512A2F04F100F63095 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D44310502A2F04F100F63095 /* Preview Assets.xcassets */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		D422ECB72A32F627005586AD /* Prefecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prefecture.swift; sourceTree = "<group>"; };
 		D422ECAE2A32AEE2005586AD /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		D422ECB52A32D993005586AD /* YumemiWetherRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YumemiWetherRequest.swift; sourceTree = "<group>"; };
 		D44310462A2F04EF00F63095 /* iOS-Training-Ryuto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Training-Ryuto.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D44310492A2F04EF00F63095 /* iOS_Training_RyutoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_Training_RyutoApp.swift; sourceTree = "<group>"; };
 		D443104D2A2F04F100F63095 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				D4FB92BC2A307F0A000DCFC2 /* YumemiWeatherAPIClient.swift */,
+				D422ECB52A32D993005586AD /* YumemiWetherRequest.swift */,
 			);
 			path = YumemiWeather;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 			files = (
 				D4FB92BD2A307F0A000DCFC2 /* YumemiWeatherAPIClient.swift in Sources */,
 				D44310792A2F39A500F63095 /* WeatherView.swift in Sources */,
+				D422ECB62A32D993005586AD /* YumemiWetherRequest.swift in Sources */,
 				D44310742A2F086C00F63095 /* PrefectureListView.swift in Sources */,
 				D422ECB82A32F627005586AD /* Prefecture.swift in Sources */,
 				D44310762A2F0BD900F63095 /* PrefectureRowView.swift in Sources */,
