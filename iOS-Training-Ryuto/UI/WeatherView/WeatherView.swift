@@ -26,8 +26,12 @@ struct WeatherView: View {
             .foregroundColor(.white)
         }
         .onAppear {
-            guard let json = try? JsonHelper.createJSON(["area": prefecture.id, "date": "2020-04-01T12:00:00+09:00"]) else { return }
-            viewModel.fetchWeatherCondition(jsonString: json)
+            guard let jsonString = try? JsonHelper.createJSON([
+                "area": prefecture.id,
+                "date": DateHelper.shared.dateToISO8601String(date: Date.now)
+            ]) else { return }
+            
+            viewModel.fetchWeatherCondition(jsonString: jsonString)
         }
         .toolbar {
             // 再読み込みボタン
