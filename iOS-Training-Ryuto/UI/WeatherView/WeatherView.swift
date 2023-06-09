@@ -38,7 +38,7 @@ struct WeatherView: View {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
                     guard let jsonString = try? JsonHelper.createJSON([
-                        "area": prefecture,
+                        "area": prefecture.id,
                         "date": DateHelper.shared.dateToISO8601String(date: Date.now)
                     ]) else { return }
                     

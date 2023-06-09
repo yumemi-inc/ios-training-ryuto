@@ -93,6 +93,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D422ECB02A32B926005586AD /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				D4FB92BE2A3083D3000DCFC2 /* JsonHelper.swift */,
+				D422ECAE2A32AEE2005586AD /* DateHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		D422ECB12A32B93A005586AD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D422ECB22A32B96B005586AD /* Weather */,
+				D422ECB32A32B979005586AD /* YumemiWeather */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D422ECB22A32B96B005586AD /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				D4FB92B62A3066BF000DCFC2 /* Weather.swift */,
+				D4FB92B82A3078A3000DCFC2 /* WeatherCondition.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		D422ECB32A32B979005586AD /* YumemiWeather */ = {
+			isa = PBXGroup;
+			children = (
+				D4FB92BC2A307F0A000DCFC2 /* YumemiWeatherAPIClient.swift */,
+			);
+			path = YumemiWeather;
+			sourceTree = "<group>";
+		};
 		D443103D2A2F04EF00F63095 = {
 			isa = PBXGroup;
 			children = (
@@ -117,12 +152,9 @@
 			isa = PBXGroup;
 			children = (
 				D44310492A2F04EF00F63095 /* iOS_Training_RyutoApp.swift */,
-				D4FB92BE2A3083D3000DCFC2 /* JsonHelper.swift */,
-				D422ECAE2A32AEE2005586AD /* DateHelper.swift */,
-				D4FB92B62A3066BF000DCFC2 /* Weather.swift */,
-				D4FB92B82A3078A3000DCFC2 /* WeatherCondition.swift */,
-				D4FB92BC2A307F0A000DCFC2 /* YumemiWeatherAPIClient.swift */,
+				D422ECB02A32B926005586AD /* Helper */,
 				D4FB92B22A3065D6000DCFC2 /* UI */,
+				D422ECB12A32B93A005586AD /* Model */,
 				D443104D2A2F04F100F63095 /* Assets.xcassets */,
 				D443104F2A2F04F100F63095 /* Preview Content */,
 			);
