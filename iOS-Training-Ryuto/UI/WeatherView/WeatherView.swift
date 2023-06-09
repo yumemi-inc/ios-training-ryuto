@@ -22,7 +22,10 @@ struct WeatherView: View {
             
             VStack(spacing: 100) {
                 weatherInformationView()
-                weatherDetailView()
+                if let weather = viewModel.weather {
+                    weatherDetailView(weather: weather)
+                }
+                
                 Spacer()
             }
             .foregroundColor(.white)
@@ -70,16 +73,14 @@ extension WeatherView {
         }
     }
     
-    private func weatherDetailView() -> some View {
+    private func weatherDetailView(weather: Weather) -> some View {
         VStack(spacing: 50) {
             HStack(spacing: 20) {
-                if let weather = viewModel.weather {
-                    Image(systemName: weather.condition.imageName)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 150, height: 150)
-                        .foregroundColor(weather.condition.imageColor)
-                }
+                Image(systemName: weather.condition.imageName)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 150, height: 150)
+                    .foregroundColor(weather.condition.imageColor)
                 
                 VStack(alignment: .leading, spacing: 10) {
                     HStack(spacing: 3) {
@@ -87,9 +88,8 @@ extension WeatherView {
                             .resizable()
                             .scaledToFit()
                             .frame(width: 20, height: 20)
-                        if let weather = viewModel.weather {
-                            Text("最高: \(weather.maxTemperature)°")
-                        }
+                        
+                        Text("最高: \(weather.maxTemperature)°")
                     }
                     .foregroundColor(.red)
                     
@@ -98,19 +98,16 @@ extension WeatherView {
                             .resizable()
                             .scaledToFit()
                             .frame(width: 20, height: 20)
-                        if let weather = viewModel.weather {
-                            Text("最低: \(weather.minTemperature)°")
-                        }
+                        
+                        Text("最低: \(weather.minTemperature)°")
                     }
                     .foregroundColor(.indigo)
                 }
                 .font(.system(size: 20))
             }
             
-            if let weather = viewModel.weather {
-                Text(weather.condition.rawValue)
-                    .font(.system(size: 25))
-            }
+            Text(weather.condition.rawValue)
+                .font(.system(size: 25))
         }
     }
 }
