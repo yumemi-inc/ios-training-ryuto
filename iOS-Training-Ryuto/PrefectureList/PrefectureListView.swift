@@ -23,8 +23,8 @@ struct PrefectureListView: View {
         }
     }
     
-    private let hokkaido = Region(name: "北海道", prefectures: [Prefecture(name: "北海道", imageName: "Hokkaido")])
-    private let tohoku = Region(name: "東北", prefectures: [
+    private let hokkaido = Region(id: "北海道", prefectures: [Prefecture(name: "北海道", imageName: "Hokkaido")])
+    private let tohoku = Region(id: "東北", prefectures: [
         Prefecture(name: "青森県", imageName: "Aomori"),
         Prefecture(name: "岩手県", imageName: "Iwate"),
         Prefecture(name: "宮城県", imageName: "Miyagi"),
@@ -32,32 +32,32 @@ struct PrefectureListView: View {
         Prefecture(name: "山形県", imageName: "Yamagata"),
         Prefecture(name: "福島県", imageName: "Fukushima"),
     ])
-    private let kanto = Region(name: "関東", prefectures: [
+    private let kanto = Region(id: "関東", prefectures: [
         Prefecture(name: "埼玉県", imageName: "Saitama"),
         Prefecture(name: "千葉県", imageName: "Chiba"),
         Prefecture(name: "東京都", imageName: "Tokyo"),
         Prefecture(name: "神奈川県", imageName: "Kanagawa"),
     ])
-    private let koshin = Region(name: "甲信", prefectures: [
+    private let koshin = Region(id: "甲信", prefectures: [
         Prefecture(name: "茨城県", imageName: "Ibaraki"),
         Prefecture(name: "栃木県", imageName: "Tochigi"),
         Prefecture(name: "群馬県", imageName: "Gunma"),
         Prefecture(name: "山梨県", imageName: "Yamanashi"),
         Prefecture(name: "長野県", imageName: "Nagano"),
     ])
-    private let hokuriku = Region(name: "北陸", prefectures: [
+    private let hokuriku = Region(id: "北陸", prefectures: [
         Prefecture(name: "新潟県", imageName: "Nigata"),
         Prefecture(name: "富山県", imageName: "Toyama"),
         Prefecture(name: "石川県", imageName: "Ishikawa"),
         Prefecture(name: "福井県", imageName: "Fukui"),
     ])
-    private let tokai = Region(name: "東海", prefectures: [
+    private let tokai = Region(id: "東海", prefectures: [
         Prefecture(name: "岐阜県", imageName: "Gifu"),
         Prefecture(name: "静岡県", imageName: "Shizuoka"),
         Prefecture(name: "愛知県", imageName: "Aichi"),
         Prefecture(name: "三重県", imageName: "Mie"),
     ])
-    private let kinki = Region(name: "近畿", prefectures: [
+    private let kinki = Region(id: "近畿", prefectures: [
         Prefecture(name: "滋賀県", imageName: "Shiga"),
         Prefecture(name: "京都府", imageName: "Kyoto"),
         Prefecture(name: "大阪府", imageName: "Osaka"),
@@ -65,20 +65,20 @@ struct PrefectureListView: View {
         Prefecture(name: "奈良県", imageName: "Nara"),
         Prefecture(name: "和歌山県", imageName: "Wakayama"),
     ])
-    private let chugoku = Region(name: "中国", prefectures: [
+    private let chugoku = Region(id: "中国", prefectures: [
         Prefecture(name: "鳥取県", imageName: "Tottori"),
         Prefecture(name: "島根県", imageName: "Shimane"),
         Prefecture(name: "岡山県", imageName: "Okayama"),
         Prefecture(name: "広島県", imageName: "Hiroshima"),
         Prefecture(name: "山口県", imageName: "Yamakuchi"),
     ])
-    private let shikoku = Region(name: "四国", prefectures: [
+    private let shikoku = Region(id: "四国", prefectures: [
         Prefecture(name: "徳島県", imageName: "Tokushima"),
         Prefecture(name: "香川県", imageName: "Kagawa"),
         Prefecture(name: "愛媛県", imageName: "Ehime"),
         Prefecture(name: "高知県", imageName: "Kouchi"),
     ])
-    private let kyusyu = Region(name: "九州", prefectures: [
+    private let kyusyu = Region(id: "九州", prefectures: [
         Prefecture(name: "福岡県", imageName: "Fukuoka"),
         Prefecture(name: "佐賀県", imageName: "Saga"),
         Prefecture(name: "長崎県", imageName: "Nagasaki"),

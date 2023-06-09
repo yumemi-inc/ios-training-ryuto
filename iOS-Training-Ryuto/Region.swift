@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Region {
-    let name: String
+struct Region: Identifiable {
+    let id: String
     let prefectures: [Prefecture]
 }
