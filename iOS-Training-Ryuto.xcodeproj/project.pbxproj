@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D422ECB82A32F627005586AD /* Prefecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = D422ECB72A32F627005586AD /* Prefecture.swift */; };
+		D422ECBA2A32F64B005586AD /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = D422ECB92A32F64B005586AD /* Region.swift */; };
 		D443104A2A2F04EF00F63095 /* iOS_Training_RyutoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44310492A2F04EF00F63095 /* iOS_Training_RyutoApp.swift */; };
 		D443104C2A2F04EF00F63095 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443104B2A2F04EF00F63095 /* ContentView.swift */; };
 		D443104E2A2F04F100F63095 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D443104D2A2F04F100F63095 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		D422ECB72A32F627005586AD /* Prefecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prefecture.swift; sourceTree = "<group>"; };
+		D422ECB92A32F64B005586AD /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
 		D44310462A2F04EF00F63095 /* iOS-Training-Ryuto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Training-Ryuto.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D44310492A2F04EF00F63095 /* iOS_Training_RyutoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_Training_RyutoApp.swift; sourceTree = "<group>"; };
 		D443104B2A2F04EF00F63095 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				D44310492A2F04EF00F63095 /* iOS_Training_RyutoApp.swift */,
 				D443104B2A2F04EF00F63095 /* ContentView.swift */,
 				D422ECB72A32F627005586AD /* Prefecture.swift */,
+				D422ECB92A32F64B005586AD /* Region.swift */,
 				D44310772A2F0CFA00F63095 /* PrefectureList */,
 				D443104D2A2F04F100F63095 /* Assets.xcassets */,
 				D443104F2A2F04F100F63095 /* Preview Content */,
@@ -277,6 +280,7 @@
 				D443104C2A2F04EF00F63095 /* ContentView.swift in Sources */,
 				D44310742A2F086C00F63095 /* PrefectureListView.swift in Sources */,
 				D422ECB82A32F627005586AD /* Prefecture.swift in Sources */,
+				D422ECBA2A32F64B005586AD /* Region.swift in Sources */,
 				D44310762A2F0BD900F63095 /* PrefectureRowView.swift in Sources */,
 				D443104A2A2F04EF00F63095 /* iOS_Training_RyutoApp.swift in Sources */,
 			);
