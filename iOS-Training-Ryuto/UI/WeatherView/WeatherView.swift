@@ -61,8 +61,10 @@ extension WeatherView {
                 .font(.title)
                 .fontWeight(.bold)
             
-            Text("2023年6月7日の天気")
-                .font(.title2)
+            if let weather = viewModel.weather {
+                Text(DateHelper.shared.formatToString(date: weather.date, dateFormat: "yyyy年M月d日") + "の天気")
+                    .font(.title2)
+            }
         }
     }
     
