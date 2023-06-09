@@ -41,4 +41,12 @@ extension JsonHelper {
             throw error
         }
     }
+    
+    func decode<T: Decodable>(_ model: T.Type, data: Data) throws -> T {
+        do {
+            return try decoder.decode(model, from: data)
+        } catch {
+            throw error
+        }
+    }
 }
