@@ -100,8 +100,7 @@
 			children = (
 				D44310492A2F04EF00F63095 /* iOS_Training_RyutoApp.swift */,
 				D443104B2A2F04EF00F63095 /* ContentView.swift */,
-				D44310732A2F086C00F63095 /* PrefectureListView.swift */,
-				D44310752A2F0BD900F63095 /* PrefectureRowView.swift */,
+				D44310772A2F0CFA00F63095 /* PrefectureList */,
 				D443104D2A2F04F100F63095 /* Assets.xcassets */,
 				D443104F2A2F04F100F63095 /* Preview Content */,
 			);
@@ -131,6 +130,15 @@
 				D44310662A2F04F100F63095 /* iOS_Training_RyutoUITestsLaunchTests.swift */,
 			);
 			path = "iOS-Training-RyutoUITests";
+			sourceTree = "<group>";
+		};
+		D44310772A2F0CFA00F63095 /* PrefectureList */ = {
+			isa = PBXGroup;
+			children = (
+				D44310732A2F086C00F63095 /* PrefectureListView.swift */,
+				D44310752A2F0BD900F63095 /* PrefectureRowView.swift */,
+			);
+			path = PrefectureList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
