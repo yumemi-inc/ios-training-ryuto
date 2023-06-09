@@ -10,13 +10,13 @@ import SwiftUI
 struct PrefectureListView: View {
     @State private var searchText: String = ""
     
-    private var searchResults: [String] {
+    private var searchResults: [Prefecture] {
         get {
             if searchText.isEmpty { return [] }
             else {
-                let filteredPrefectures = prefectures
-                    .flatMap { $0.1 }
-                    .filter { $0.contains(searchText) }
+                let filteredPrefectures = regions
+                    .flatMap { $0.prefectures }
+                    .filter { $0.id.contains(searchText) }
                 
                 return filteredPrefectures
             }
@@ -127,8 +127,8 @@ struct PrefectureListView: View {
                         }
                     }
                 } else {
-                    ForEach(searchResults, id: \.self) { prefecture in
-//                        PrefectureRowView(prefecture: prefecture)
+                    ForEach(searchResults) { prefecture in
+                        PrefectureRowView(prefecture: prefecture)
                     }
                 }
             }
