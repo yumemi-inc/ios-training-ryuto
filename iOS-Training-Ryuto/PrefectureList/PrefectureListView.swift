@@ -80,7 +80,7 @@ struct PrefectureListView: View {
             Prefecture(id: "島根県", imageName: "Shimane"),
             Prefecture(id: "岡山県", imageName: "Okayama"),
             Prefecture(id: "広島県", imageName: "Hiroshima"),
-            Prefecture(id: "山口県", imageName: "Yamakuchi")
+            Prefecture(id: "山口県", imageName: "Yamaguchi")
         ]),
         
         Region(id: "四国", prefectures: [
