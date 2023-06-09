@@ -12,6 +12,7 @@ struct WeatherView: View {
     @Environment(\.dismiss) var dismiss
     @StateObject private var viewModel = WeatherViewModel()
     
+    
     var body: some View {
         ZStack {
             // 背景色を設定
