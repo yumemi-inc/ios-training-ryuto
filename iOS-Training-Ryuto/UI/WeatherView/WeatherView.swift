@@ -116,8 +116,10 @@ extension WeatherView {
                 .font(.system(size: 20))
             }
             
-            Text("晴れ")
-                .font(.system(size: 25))
+            if let weather = viewModel.weather {
+                Text(weather.condition.rawValue)
+                    .font(.system(size: 25))
+            }
         }
     }
 }
