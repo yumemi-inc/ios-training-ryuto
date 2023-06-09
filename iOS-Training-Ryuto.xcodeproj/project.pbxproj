@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D40CA1F12A385EC3009BE8AA /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = D40CA1F02A385EC3009BE8AA /* RswiftLibrary */; };
 		D422ECB82A32F627005586AD /* Prefecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = D422ECB72A32F627005586AD /* Prefecture.swift */; };
+		D422ECAF2A32AEE2005586AD /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D422ECAE2A32AEE2005586AD /* DateHelper.swift */; };
 		D443104A2A2F04EF00F63095 /* iOS_Training_RyutoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44310492A2F04EF00F63095 /* iOS_Training_RyutoApp.swift */; };
 		D443104E2A2F04F100F63095 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D443104D2A2F04F100F63095 /* Assets.xcassets */; };
 		D44310512A2F04F100F63095 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D44310502A2F04F100F63095 /* Preview Assets.xcassets */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		D422ECB72A32F627005586AD /* Prefecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prefecture.swift; sourceTree = "<group>"; };
+		D422ECAE2A32AEE2005586AD /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		D44310462A2F04EF00F63095 /* iOS-Training-Ryuto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Training-Ryuto.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D44310492A2F04EF00F63095 /* iOS_Training_RyutoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_Training_RyutoApp.swift; sourceTree = "<group>"; };
 		D443104D2A2F04F100F63095 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			children = (
 				D44310492A2F04EF00F63095 /* iOS_Training_RyutoApp.swift */,
 				D4FB92BE2A3083D3000DCFC2 /* JsonHelper.swift */,
+				D422ECAE2A32AEE2005586AD /* DateHelper.swift */,
 				D4FB92B62A3066BF000DCFC2 /* Weather.swift */,
 				D4FB92B82A3078A3000DCFC2 /* WeatherCondition.swift */,
 				D4FB92BC2A307F0A000DCFC2 /* YumemiWeatherAPIClient.swift */,
@@ -327,6 +330,7 @@
 				D4FB92BB2A307CAE000DCFC2 /* WeatherViewModel.swift in Sources */,
 				D443104A2A2F04EF00F63095 /* iOS_Training_RyutoApp.swift in Sources */,
 				D4FB92B92A3078A4000DCFC2 /* WeatherCondition.swift in Sources */,
+				D422ECAF2A32AEE2005586AD /* DateHelper.swift in Sources */,
 				D4FB92BF2A3083D3000DCFC2 /* JsonHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
