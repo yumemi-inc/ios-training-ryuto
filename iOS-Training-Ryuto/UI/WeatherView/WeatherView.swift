@@ -73,29 +73,12 @@ extension WeatherView {
     private func weatherDetailView() -> some View {
         VStack(spacing: 50) {
             HStack(spacing: 20) {
-                switch viewModel.weather?.condition {
-                case .sunny:
-                    Image(systemName: "sun.max.fill")
+                if let weather = viewModel.weather {
+                    Image(systemName: weather.condition.imageName)
                         .resizable()
                         .scaledToFit()
                         .frame(width: 150, height: 150)
-                        .foregroundColor(.orange)
-                    
-                case .cloudy:
-                    Image(systemName: "cloud.fill")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 150, height: 150)
-                        .foregroundColor(.gray)
-                    
-                case .rainy:
-                    Image(systemName: "cloud.rain.fill")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 150, height: 150)
-                        .foregroundColor(.blue)
-                case .none:
-                    ProgressView()
+                        .foregroundColor(weather.condition.imageColor)
                 }
                 
                 VStack(alignment: .leading, spacing: 10) {
@@ -128,6 +111,30 @@ extension WeatherView {
                 Text(weather.condition.rawValue)
                     .font(.system(size: 25))
             }
+        }
+    }
+}
+
+private extension WeatherCondition {
+    var imageName: String {
+        switch self {
+        case .sunny:
+            return "sun.max.fill"
+        case .cloudy:
+            return "cloud.fill"
+        case .rainy:
+            return "cloud.rain.fill"
+        }
+    }
+    
+    var imageColor: Color {
+        switch self {
+        case .sunny:
+            return .orange
+        case .cloudy:
+            return .gray
+        case .rainy:
+            return .blue
         }
     }
 }
