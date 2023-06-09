@@ -37,7 +37,12 @@ struct WeatherView: View {
             // 再読み込みボタン
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
+                    guard let jsonString = try? JsonHelper.createJSON([
+                        "area": prefecture,
+                        "date": DateHelper.shared.dateToISO8601String(date: Date.now)
+                    ]) else { return }
                     
+                    viewModel.fetchWeatherCondition(jsonString: jsonString)
                 } label: {
                     Image(systemName: "arrow.clockwise")
                         .foregroundColor(.white)
