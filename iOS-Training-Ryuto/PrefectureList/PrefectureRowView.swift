@@ -8,21 +8,21 @@
 import SwiftUI
 
 struct PrefectureRowView: View {
-    let prefecture: String
+    let prefecture: Prefecture
     
     var body: some View {
         HStack(spacing: 10) {
-            Image(prefecture)
+            Image(prefecture.imageName)
                 .resizable()
                 .scaledToFit()
                 .frame(width: 50)
-            Text(prefecture)
+            Text(prefecture.id)
         }
     }
 }
 
 struct PrefectureRowView_Previews: PreviewProvider {
     static var previews: some View {
-        PrefectureRowView(prefecture: "東京都")
+        PrefectureRowView(prefecture: Prefecture(id: "東京都", imageName: "Tokyo"))
     }
 }
