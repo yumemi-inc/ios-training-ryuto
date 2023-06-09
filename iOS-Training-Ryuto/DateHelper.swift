@@ -16,3 +16,9 @@ final class DateHelper {
         self.iso8601DateFormatter.timeZone = TimeZone(identifier: "Asia/Tokyo")
     }
 }
+
+extension DateHelper {
+    func dateToISO8601String(date: Date) -> String {
+        return iso8601DateFormatter.string(from: date)
+    }
+}
