@@ -29,7 +29,7 @@ struct WeatherView: View {
         }
         .onAppear {
             request = YumemiWeatherRequest(area: prefecture.id, date: Date.now)
-            guard let jsonString = try? JsonHelper.shared.encodeToString(request) else { return }
+            guard let jsonString = try? JSONHelper.shared.encodeToString(request) else { return }
             
             viewModel.fetchWeatherCondition(jsonString: jsonString)
         }
@@ -37,7 +37,7 @@ struct WeatherView: View {
             // 再読み込みボタン
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
-                    guard let jsonString = try? JsonHelper.shared.encodeToString(request) else { return }
+                    guard let jsonString = try? JSONHelper.shared.encodeToString(request) else { return }
                     
                     viewModel.fetchWeatherCondition(jsonString: jsonString)
                 } label: {

@@ -7,11 +7,11 @@
 
 import Foundation
 
-final class JsonHelper {
+final class JSONHelper {
     private let encoder: JSONEncoder
     private let decoder: JSONDecoder
     
-    static let shared = JsonHelper()
+    static let shared = JSONHelper()
     
     private init() {
         self.encoder = JSONEncoder()
@@ -22,7 +22,7 @@ final class JsonHelper {
     }
 }
 
-extension JsonHelper {
+extension JSONHelper {
     func encodeToString<T: Encodable>(_ model: T) throws -> String? {
         do {
             let jsonData = try encoder.encode(model)

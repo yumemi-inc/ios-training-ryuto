@@ -25,7 +25,7 @@
 		D4FB92B92A3078A4000DCFC2 /* WeatherCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FB92B82A3078A3000DCFC2 /* WeatherCondition.swift */; };
 		D4FB92BB2A307CAE000DCFC2 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FB92BA2A307CAE000DCFC2 /* WeatherViewModel.swift */; };
 		D4FB92BD2A307F0A000DCFC2 /* YumemiWeatherAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FB92BC2A307F0A000DCFC2 /* YumemiWeatherAPIClient.swift */; };
-		D4FB92BF2A3083D3000DCFC2 /* JsonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FB92BE2A3083D3000DCFC2 /* JsonHelper.swift */; };
+		D4FB92BF2A3083D3000DCFC2 /* JSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FB92BE2A3083D3000DCFC2 /* JSONHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,7 +65,7 @@
 		D4FB92B82A3078A3000DCFC2 /* WeatherCondition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCondition.swift; sourceTree = "<group>"; };
 		D4FB92BA2A307CAE000DCFC2 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		D4FB92BC2A307F0A000DCFC2 /* YumemiWeatherAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YumemiWeatherAPIClient.swift; sourceTree = "<group>"; };
-		D4FB92BE2A3083D3000DCFC2 /* JsonHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonHelper.swift; sourceTree = "<group>"; };
+		D4FB92BE2A3083D3000DCFC2 /* JSONHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +98,7 @@
 		D422ECB02A32B926005586AD /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				D4FB92BE2A3083D3000DCFC2 /* JsonHelper.swift */,
+				D4FB92BE2A3083D3000DCFC2 /* JSONHelper.swift */,
 				D422ECAE2A32AEE2005586AD /* DateHelper.swift */,
 			);
 			path = Helper;
@@ -367,7 +367,7 @@
 				D443104A2A2F04EF00F63095 /* iOS_Training_RyutoApp.swift in Sources */,
 				D4FB92B92A3078A4000DCFC2 /* WeatherCondition.swift in Sources */,
 				D422ECAF2A32AEE2005586AD /* DateHelper.swift in Sources */,
-				D4FB92BF2A3083D3000DCFC2 /* JsonHelper.swift in Sources */,
+				D4FB92BF2A3083D3000DCFC2 /* JSONHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
