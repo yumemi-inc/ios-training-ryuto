@@ -119,10 +119,10 @@ struct PrefectureListView: View {
         NavigationView {
             List {
                 if searchResults.isEmpty {
-                    ForEach(prefectures, id: \.0) { regionName, regionPrefectures in
-                        Section(regionName) {
-                            ForEach(regionPrefectures, id: \.self) { prefecture in
-//                                PrefectureRowView(prefecture: prefecture)
+                    ForEach(regions) { region in
+                        Section(region.id) {
+                            ForEach(region.prefectures) { prefecture in
+                                PrefectureRowView(prefecture: prefecture)
                             }
                         }
                     }
