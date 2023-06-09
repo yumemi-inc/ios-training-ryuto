@@ -31,3 +31,14 @@ final class JsonHelper {
         }   
     }
 }
+
+extension JsonHelper {
+    func encodeToString<T: Encodable>(_ model: T) throws -> String? {
+        do {
+            let jsonData = try encoder.encode(model)
+            return String(data: jsonData, encoding: .utf8)
+        } catch {
+            throw error
+        }
+    }
+}
