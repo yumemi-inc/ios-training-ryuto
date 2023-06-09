@@ -10,7 +10,7 @@ import SwiftUI
 struct WeatherView: View {
     let prefecture: Prefecture
     
-    private let viewModel = WeatherViewModel()
+    @ObservedObject private var viewModel = WeatherViewModel()
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
