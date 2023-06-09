@@ -32,6 +32,12 @@ struct PrefectureListView: View {
         Prefecture(name: "山形県", imageName: "Yamagata"),
         Prefecture(name: "福島県", imageName: "Fukushima"),
     ])
+    private let kanto = Region(name: "関東", prefectures: [
+        Prefecture(name: "埼玉県", imageName: "Saitama"),
+        Prefecture(name: "千葉県", imageName: "Chiba"),
+        Prefecture(name: "東京都", imageName: "Tokyo"),
+        Prefecture(name: "神奈川県", imageName: "Kanagawa"),
+    ])
     
     private let prefectures = [
         ("北海道", ["北海道"]),
