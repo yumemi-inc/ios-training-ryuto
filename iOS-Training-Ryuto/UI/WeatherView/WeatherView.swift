@@ -13,6 +13,8 @@ struct WeatherView: View {
     @ObservedObject private var viewModel = WeatherViewModel()
     @Environment(\.dismiss) private var dismiss
     
+    @State private var request: YumemiWeatherRequest? = nil
+    
     var body: some View {
         ZStack {
             // 背景色を設定
@@ -26,10 +28,8 @@ struct WeatherView: View {
             .foregroundColor(.white)
         }
         .onAppear {
-            guard let jsonString = try? JsonHelper.createJSON([
-                "area": prefecture.id,
-                "date": DateHelper.shared.dateToISO8601String(date: Date.now)
-            ]) else { return }
+            request = YumemiWeatherRequest(area: prefecture.id, date: Date.now)
+            guard let jsonString = try? JsonHelper.shared.encodeToString(request) else { return }
             
             viewModel.fetchWeatherCondition(jsonString: jsonString)
         }
@@ -37,10 +37,7 @@ struct WeatherView: View {
             // 再読み込みボタン
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
-                    guard let jsonString = try? JsonHelper.createJSON([
-                        "area": prefecture.id,
-                        "date": DateHelper.shared.dateToISO8601String(date: Date.now)
-                    ]) else { return }
+                    guard let jsonString = try? JsonHelper.shared.encodeToString(request) else { return }
                     
                     viewModel.fetchWeatherCondition(jsonString: jsonString)
                 } label: {
