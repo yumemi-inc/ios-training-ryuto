@@ -24,40 +24,7 @@ struct WeatherView: View {
                 Spacer()
                     .frame(height: 100)
                 
-                HStack(spacing: 20) {
-                        Image(systemName: "sun.max.fill")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 150, height: 150)
-                            .foregroundColor(.orange)
-                    
-                    VStack(alignment: .leading, spacing: 10) {
-                        HStack(spacing: 3) {
-                            Image(systemName: "arrow.up")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 20, height: 20)
-                            Text("最高: 30°")
-                        }
-                        .foregroundColor(.red)
-                        
-                        HStack(spacing: 3) {
-                            Image(systemName: "arrow.down")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 20, height: 20)
-                            Text("最低: 15°")
-                        }
-                        .foregroundColor(.indigo)
-                    }
-                    .font(.system(size: 20))
-                }
-                
-                Spacer()
-                    .frame(height: 50)
-                
-                Text("晴れ")
-                    .font(.system(size: 25))
+                weatherDetailView()
                 
                 Spacer()
             }
@@ -93,6 +60,42 @@ extension WeatherView {
             
             Text("2023年6月7日の天気")
                 .font(.title2)
+        }
+    }
+    
+    func weatherDetailView() -> some View {
+        VStack(spacing: 50) {
+            HStack(spacing: 20) {
+                    Image(systemName: "sun.max.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 150, height: 150)
+                        .foregroundColor(.orange)
+                
+                VStack(alignment: .leading, spacing: 10) {
+                    HStack(spacing: 3) {
+                        Image(systemName: "arrow.up")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 20, height: 20)
+                        Text("最高: 30°")
+                    }
+                    .foregroundColor(.red)
+                    
+                    HStack(spacing: 3) {
+                        Image(systemName: "arrow.down")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 20, height: 20)
+                        Text("最低: 15°")
+                    }
+                    .foregroundColor(.indigo)
+                }
+                .font(.system(size: 20))
+            }
+            
+            Text("晴れ")
+                .font(.system(size: 25))
         }
     }
 }
