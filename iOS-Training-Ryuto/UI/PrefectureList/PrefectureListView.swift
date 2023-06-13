@@ -115,6 +115,7 @@ struct PrefectureListView: View {
             .searchable(text: $searchText,
                         placement: .navigationBarDrawer(displayMode: .always))
         }
+        .tint(.white)
     }
 }
 
