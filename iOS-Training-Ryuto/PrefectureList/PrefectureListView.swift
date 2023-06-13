@@ -67,11 +67,11 @@ struct PrefectureListView: View {
             Prefecture(id: "和歌山県", imageName: R.image.wakayama.name)
         ]),
         ("中国", [
-            Prefecture(id: "鳥取県", imageName: "Tottori"),
-            Prefecture(id: "島根県", imageName: "Shimane"),
-            Prefecture(id: "岡山県", imageName: "Okayama"),
-            Prefecture(id: "広島県", imageName: "Hiroshima"),
-            Prefecture(id: "山口県", imageName: "Yamakuchi"),
+            Prefecture(id: "鳥取県", imageName: R.image.tottori.name),
+            Prefecture(id: "島根県", imageName: R.image.shimane.name),
+            Prefecture(id: "岡山県", imageName: R.image.okayama.name),
+            Prefecture(id: "広島県", imageName: R.image.hiroshima.name),
+            Prefecture(id: "山口県", imageName: R.image.yamaguchi.name),
         ]),
         ("四国", [
             Prefecture(id: "徳島県", imageName: R.image.tokushima.name),
