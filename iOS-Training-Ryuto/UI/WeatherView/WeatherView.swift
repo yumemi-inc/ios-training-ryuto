@@ -18,14 +18,8 @@ struct WeatherView: View {
             backgroundView()
             
             VStack {
-                Text(prefecture.id)
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .padding(.top, 20)
-                    .padding(.bottom, 10)
                 
-                Text("2023年6月7日の天気")
-                    .font(.title2)
+                weatherInformationView()
                 
                 Spacer()
                     .frame(height: 100)
@@ -89,6 +83,17 @@ extension WeatherView {
                        startPoint: .top,
                        endPoint: .bottom)
         .ignoresSafeArea()
+    }
+    
+    func weatherInformationView() -> some View {
+        VStack(spacing: 20) {
+            Text(prefecture.id)
+                .font(.title)
+                .fontWeight(.bold)
+            
+            Text("2023年6月7日の天気")
+                .font(.title2)
+        }
     }
 }
 
