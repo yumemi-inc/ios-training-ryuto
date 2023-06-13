@@ -15,7 +15,7 @@ struct PrefectureListView: View {
             if searchText.isEmpty { return [] }
             else {
                 let filteredPrefectures = regions
-                    .flatMap { $0.prefectures }
+                    .flatMap { $1 }
                     .filter { $0.id.contains(searchText) }
                 
                 return filteredPrefectures
@@ -23,12 +23,9 @@ struct PrefectureListView: View {
         }
     }
     
-    private let regions: [Region] = [
-        Region(id: "北海道", prefectures: [
-            Prefecture(id: "北海道", imageName: "Hokkaido")
-        ]),
-        
-        Region(id: "東北", prefectures: [
+    private let regions: [(String, [Prefecture])] = [
+        ("北海道",  [Prefecture(id: "北海道", imageName: "Hokkaido")]),
+        ("東北", [
             Prefecture(id: "青森県", imageName: "Aomori"),
             Prefecture(id: "岩手県", imageName: "Iwate"),
             Prefecture(id: "宮城県", imageName: "Miyagi"),
@@ -36,37 +33,32 @@ struct PrefectureListView: View {
             Prefecture(id: "山形県", imageName: "Yamagata"),
             Prefecture(id: "福島県", imageName: "Fukushima")
         ]),
-        
-        Region(id: "関東", prefectures: [
+        ("関東", [
             Prefecture(id: "埼玉県", imageName: "Saitama"),
             Prefecture(id: "千葉県", imageName: "Chiba"),
             Prefecture(id: "東京都", imageName: "Tokyo"),
             Prefecture(id: "神奈川県", imageName: "Kanagawa")
         ]),
-        
-        Region(id: "甲信", prefectures: [
+        ("甲信", [
             Prefecture(id: "茨城県", imageName: "Ibaraki"),
             Prefecture(id: "栃木県", imageName: "Tochigi"),
             Prefecture(id: "群馬県", imageName: "Gunma"),
             Prefecture(id: "山梨県", imageName: "Yamanashi"),
             Prefecture(id: "長野県", imageName: "Nagano")
         ]),
-        
-        Region(id: "北陸", prefectures: [
-           Prefecture(id: "新潟県", imageName: "Nigata"),
-           Prefecture(id: "富山県", imageName: "Toyama"),
-           Prefecture(id: "石川県", imageName: "Ishikawa"),
-           Prefecture(id: "福井県", imageName: "Fukui")
-       ]),
-        
-        Region(id: "東海", prefectures: [
+        ("北陸", [
+            Prefecture(id: "新潟県", imageName: "Nigata"),
+            Prefecture(id: "富山県", imageName: "Toyama"),
+            Prefecture(id: "石川県", imageName: "Ishikawa"),
+            Prefecture(id: "福井県", imageName: "Fukui")
+        ]),
+        ("東海", [
             Prefecture(id: "岐阜県", imageName: "Gifu"),
             Prefecture(id: "静岡県", imageName: "Shizuoka"),
             Prefecture(id: "愛知県", imageName: "Aichi"),
             Prefecture(id: "三重県", imageName: "Mie")
         ]),
-        
-        Region(id: "近畿", prefectures: [
+        ("近畿", [
             Prefecture(id: "滋賀県", imageName: "Shiga"),
             Prefecture(id: "京都府", imageName: "Kyoto"),
             Prefecture(id: "大阪府", imageName: "Osaka"),
@@ -74,23 +66,19 @@ struct PrefectureListView: View {
             Prefecture(id: "奈良県", imageName: "Nara"),
             Prefecture(id: "和歌山県", imageName: "Wakayama")
         ]),
-        
-        Region(id: "中国", prefectures: [
-            Prefecture(id: "鳥取県", imageName: "Tottori"),
-            Prefecture(id: "島根県", imageName: "Shimane"),
-            Prefecture(id: "岡山県", imageName: "Okayama"),
-            Prefecture(id: "広島県", imageName: "Hiroshima"),
-            Prefecture(id: "山口県", imageName: "Yamaguchi")
-        ]),
-        
-        Region(id: "四国", prefectures: [
+        ("中国", [
             Prefecture(id: "徳島県", imageName: "Tokushima"),
             Prefecture(id: "香川県", imageName: "Kagawa"),
             Prefecture(id: "愛媛県", imageName: "Ehime"),
             Prefecture(id: "高知県", imageName: "Kouchi")
         ]),
-        
-        Region(id: "九州", prefectures: [
+        ("四国", [
+            Prefecture(id: "徳島県", imageName: "Tokushima"),
+            Prefecture(id: "香川県", imageName: "Kagawa"),
+            Prefecture(id: "愛媛県", imageName: "Ehime"),
+            Prefecture(id: "高知県", imageName: "Kouchi")
+        ]),
+        ("九州", [
             Prefecture(id: "福岡県", imageName: "Fukuoka"),
             Prefecture(id: "佐賀県", imageName: "Saga"),
             Prefecture(id: "長崎県", imageName: "Nagasaki"),
@@ -106,9 +94,9 @@ struct PrefectureListView: View {
         NavigationView {
             List {
                 if searchResults.isEmpty {
-                    ForEach(regions) { region in
-                        Section(region.id) {
-                            ForEach(region.prefectures) { prefecture in
+                    ForEach(regions, id: \.0) { region, prefectures in
+                        Section(region) {
+                            ForEach(prefectures) { prefecture in
                                 PrefectureRowView(prefecture: prefecture)
                             }
                         }
