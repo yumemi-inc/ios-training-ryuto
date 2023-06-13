@@ -33,22 +33,14 @@ struct WeatherView: View {
                 Spacer()
                     .frame(height: 100)
                 
-                HStack {
-                    VStack(spacing: 30) {
+                HStack(spacing: 20) {
                         Image(systemName: "sun.max.fill")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 150, height: 150)
                             .foregroundColor(.orange)
-                        
-                        Text("晴れ")
-                            .font(.system(size: 15))
-                    }
                     
-                    Spacer()
-                        .frame(width: 40)
-                    
-                    VStack(spacing: 10) {
+                    VStack(alignment: .leading, spacing: 10) {
                         HStack(spacing: 3) {
                             Image(systemName: "arrow.up")
                                 .resizable()
@@ -69,6 +61,13 @@ struct WeatherView: View {
                     }
                     .font(.system(size: 20))
                 }
+                
+                Spacer()
+                    .frame(height: 50)
+                
+                Text("晴れ")
+                    .font(.system(size: 25))
+                
                 Spacer()
             }
             .foregroundColor(.white)
