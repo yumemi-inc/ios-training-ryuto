@@ -17,15 +17,9 @@ struct WeatherView: View {
             // 背景色を設定
             backgroundView()
             
-            VStack {
-                
+            VStack(spacing: 100) {
                 weatherInformationView()
-                
-                Spacer()
-                    .frame(height: 100)
-                
                 weatherDetailView()
-                
                 Spacer()
             }
             .foregroundColor(.white)
