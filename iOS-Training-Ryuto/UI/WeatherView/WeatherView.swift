@@ -39,14 +39,14 @@ struct WeatherView: View {
 }
 
 extension WeatherView {
-    func backgroundView() -> some View {
+    private func backgroundView() -> some View {
         LinearGradient(gradient: Gradient(colors: [.blue, .cyan]),
                        startPoint: .top,
                        endPoint: .bottom)
         .ignoresSafeArea()
     }
     
-    func weatherInformationView() -> some View {
+    private func weatherInformationView() -> some View {
         VStack(spacing: 20) {
             Text(prefecture.id)
                 .font(.title)
@@ -57,7 +57,7 @@ extension WeatherView {
         }
     }
     
-    func weatherDetailView() -> some View {
+    private func weatherDetailView() -> some View {
         VStack(spacing: 50) {
             HStack(spacing: 20) {
                     Image(systemName: "sun.max.fill")
