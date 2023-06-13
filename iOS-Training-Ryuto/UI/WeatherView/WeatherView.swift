@@ -15,10 +15,7 @@ struct WeatherView: View {
     var body: some View {
         ZStack {
             // 背景色を設定
-            LinearGradient(gradient: Gradient(colors: [.blue, .cyan]),
-                           startPoint: .top,
-                           endPoint: .bottom)
-            .ignoresSafeArea()
+            backgroundView()
             
             VStack {
                 Text(prefecture.id)
@@ -83,6 +80,15 @@ struct WeatherView: View {
                 }
             }
         }
+    }
+}
+
+extension WeatherView {
+    func backgroundView() -> some View {
+        LinearGradient(gradient: Gradient(colors: [.blue, .cyan]),
+                       startPoint: .top,
+                       endPoint: .bottom)
+        .ignoresSafeArea()
     }
 }
 
