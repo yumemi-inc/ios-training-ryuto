@@ -104,7 +104,6 @@
 			children = (
 				D44310492A2F04EF00F63095 /* iOS_Training_RyutoApp.swift */,
 				D443104B2A2F04EF00F63095 /* ContentView.swift */,
-				D422ECB72A32F627005586AD /* Prefecture.swift */,
 				D422ECB92A32F64B005586AD /* Region.swift */,
 				D44310772A2F0CFA00F63095 /* PrefectureList */,
 				D443104D2A2F04F100F63095 /* Assets.xcassets */,
@@ -141,6 +140,7 @@
 		D44310772A2F0CFA00F63095 /* PrefectureList */ = {
 			isa = PBXGroup;
 			children = (
+				D422ECB72A32F627005586AD /* Prefecture.swift */,
 				D44310732A2F086C00F63095 /* PrefectureListView.swift */,
 				D44310752A2F0BD900F63095 /* PrefectureRowView.swift */,
 			);
