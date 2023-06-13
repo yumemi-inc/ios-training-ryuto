@@ -55,7 +55,7 @@ struct WeatherView: View {
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 20, height: 20)
-                            Text("最高: 15°")
+                            Text("最低: 15°")
                         }
                         .foregroundColor(.indigo)
                     }
