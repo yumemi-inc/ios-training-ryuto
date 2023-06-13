@@ -72,20 +72,7 @@ struct WeatherView: View {
             }
             .foregroundColor(.white)
         }
-        .navigationBarBackButtonHidden(true)
         .toolbar {
-            // 戻るボタン
-            ToolbarItem(placement: .navigationBarLeading) {
-                Button {
-                    dismiss()
-                } label: {
-                    HStack(spacing: 3) {
-                        Image(systemName: "chevron.backward")
-                        Text("戻る")
-                    }
-                    .foregroundColor(.white)
-                }
-            }
             // 再読み込みボタン
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
@@ -101,6 +88,8 @@ struct WeatherView: View {
 
 struct WeatherView_Previews: PreviewProvider {
     static var previews: some View {
-        WeatherView(prefecture: Prefecture(id: "東京都", imageName: "Tokyo"))
+        NavigationView {
+            WeatherView(prefecture: Prefecture(id: "東京都", imageName: "Tokyo"))
+        }
     }
 }
