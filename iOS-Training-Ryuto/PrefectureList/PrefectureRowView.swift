@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PrefectureRowView: View {
     let prefecture: Prefecture
+    @Environment(\.colorScheme) private var colorScheme
     
     var body: some View {
         HStack(spacing: 10) {
@@ -16,8 +17,18 @@ struct PrefectureRowView: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 50)
+                .colorInvert(if: colorScheme == .dark) // ダークモード時に色を反転
+            
             Text(prefecture.id)
         }
+    }
+}
+
+private extension View {
+    @ViewBuilder
+    func colorInvert(if condition: Bool) -> some View {
+        if condition { self.colorInvert() }
+        else { self }
     }
 }
 
