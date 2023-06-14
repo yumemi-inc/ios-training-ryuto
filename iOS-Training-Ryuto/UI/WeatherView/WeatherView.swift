@@ -10,8 +10,6 @@ import SwiftUI
 struct WeatherView: View {
     let prefecture: Prefecture
     
-    @Environment(\.dismiss) private var dismiss
-    
     var body: some View {
         ZStack {
             // 背景色を設定
