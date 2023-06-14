@@ -18,7 +18,14 @@ final class WeatherViewModel: ObservableObject {
         self.yumemiWeatherAPIClient = yumemiWeatherAPIClient
         
         yumemiWeatherAPIClient.weather
-            .compactMap { $0 }
+            .compactMap { result in
+                switch result {
+                case .success(let weather):
+                    return weather
+                default:
+                    return nil
+                }
+            }
             .assign(to: \.weather, on: self)
             .store(in: &apiSubscriptions)
     }
