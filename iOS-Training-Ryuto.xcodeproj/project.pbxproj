@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D40CA1F12A385EC3009BE8AA /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = D40CA1F02A385EC3009BE8AA /* RswiftLibrary */; };
+		D422ECB82A32F627005586AD /* Prefecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = D422ECB72A32F627005586AD /* Prefecture.swift */; };
 		D443104A2A2F04EF00F63095 /* iOS_Training_RyutoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44310492A2F04EF00F63095 /* iOS_Training_RyutoApp.swift */; };
-		D443104C2A2F04EF00F63095 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443104B2A2F04EF00F63095 /* ContentView.swift */; };
 		D443104E2A2F04F100F63095 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D443104D2A2F04F100F63095 /* Assets.xcassets */; };
 		D44310512A2F04F100F63095 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D44310502A2F04F100F63095 /* Preview Assets.xcassets */; };
 		D443105B2A2F04F100F63095 /* iOS_Training_RyutoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443105A2A2F04F100F63095 /* iOS_Training_RyutoTests.swift */; };
 		D44310652A2F04F100F63095 /* iOS_Training_RyutoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44310642A2F04F100F63095 /* iOS_Training_RyutoUITests.swift */; };
 		D44310672A2F04F100F63095 /* iOS_Training_RyutoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44310662A2F04F100F63095 /* iOS_Training_RyutoUITestsLaunchTests.swift */; };
+		D44310742A2F086C00F63095 /* PrefectureListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44310732A2F086C00F63095 /* PrefectureListView.swift */; };
+		D44310762A2F0BD900F63095 /* PrefectureRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44310752A2F0BD900F63095 /* PrefectureRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D422ECB72A32F627005586AD /* Prefecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prefecture.swift; sourceTree = "<group>"; };
 		D44310462A2F04EF00F63095 /* iOS-Training-Ryuto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Training-Ryuto.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D44310492A2F04EF00F63095 /* iOS_Training_RyutoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_Training_RyutoApp.swift; sourceTree = "<group>"; };
-		D443104B2A2F04EF00F63095 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D443104D2A2F04F100F63095 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D44310502A2F04F100F63095 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D44310562A2F04F100F63095 /* iOS-Training-RyutoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS-Training-RyutoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +47,8 @@
 		D44310602A2F04F100F63095 /* iOS-Training-RyutoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS-Training-RyutoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D44310642A2F04F100F63095 /* iOS_Training_RyutoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_Training_RyutoUITests.swift; sourceTree = "<group>"; };
 		D44310662A2F04F100F63095 /* iOS_Training_RyutoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_Training_RyutoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D44310732A2F086C00F63095 /* PrefectureListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefectureListView.swift; sourceTree = "<group>"; };
+		D44310752A2F0BD900F63095 /* PrefectureRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefectureRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D40CA1F12A385EC3009BE8AA /* RswiftLibrary in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,7 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				D44310492A2F04EF00F63095 /* iOS_Training_RyutoApp.swift */,
-				D443104B2A2F04EF00F63095 /* ContentView.swift */,
+				D44310772A2F0CFA00F63095 /* PrefectureList */,
 				D443104D2A2F04F100F63095 /* Assets.xcassets */,
 				D443104F2A2F04F100F63095 /* Preview Content */,
 			);
@@ -127,6 +133,16 @@
 			path = "iOS-Training-RyutoUITests";
 			sourceTree = "<group>";
 		};
+		D44310772A2F0CFA00F63095 /* PrefectureList */ = {
+			isa = PBXGroup;
+			children = (
+				D422ECB72A32F627005586AD /* Prefecture.swift */,
+				D44310732A2F086C00F63095 /* PrefectureListView.swift */,
+				D44310752A2F0BD900F63095 /* PrefectureRowView.swift */,
+			);
+			path = PrefectureList;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -141,8 +157,12 @@
 			buildRules = (
 			);
 			dependencies = (
+				D40CA1F32A385ECE009BE8AA /* PBXTargetDependency */,
 			);
 			name = "iOS-Training-Ryuto";
+			packageProductDependencies = (
+				D40CA1F02A385EC3009BE8AA /* RswiftLibrary */,
+			);
 			productName = "iOS-Training-Ryuto";
 			productReference = D44310462A2F04EF00F63095 /* iOS-Training-Ryuto.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +235,9 @@
 				Base,
 			);
 			mainGroup = D443103D2A2F04EF00F63095;
+			packageReferences = (
+				D40CA1EF2A385EC3009BE8AA /* XCRemoteSwiftPackageReference "R.swift" */,
+			);
 			productRefGroup = D44310472A2F04EF00F63095 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -257,7 +280,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D443104C2A2F04EF00F63095 /* ContentView.swift in Sources */,
+				D44310742A2F086C00F63095 /* PrefectureListView.swift in Sources */,
+				D422ECB82A32F627005586AD /* Prefecture.swift in Sources */,
+				D44310762A2F0BD900F63095 /* PrefectureRowView.swift in Sources */,
 				D443104A2A2F04EF00F63095 /* iOS_Training_RyutoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,6 +307,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		D40CA1F32A385ECE009BE8AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = D40CA1F22A385ECE009BE8AA /* RswiftGenerateInternalResources */;
+		};
 		D44310582A2F04F100F63095 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D44310452A2F04EF00F63095 /* iOS-Training-Ryuto */;
@@ -583,6 +612,29 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D40CA1EF2A385EC3009BE8AA /* XCRemoteSwiftPackageReference "R.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mac-cain13/R.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D40CA1F02A385EC3009BE8AA /* RswiftLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D40CA1EF2A385EC3009BE8AA /* XCRemoteSwiftPackageReference "R.swift" */;
+			productName = RswiftLibrary;
+		};
+		D40CA1F22A385ECE009BE8AA /* RswiftGenerateInternalResources */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "plugin:RswiftGenerateInternalResources";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D443103E2A2F04EF00F63095 /* Project object */;
 }

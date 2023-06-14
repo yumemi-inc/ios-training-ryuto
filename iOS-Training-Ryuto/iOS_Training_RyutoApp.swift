@@ -11,7 +11,7 @@ import SwiftUI
 struct iOS_Training_RyutoApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            PrefectureListView()
         }
     }
 }
