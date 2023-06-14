@@ -7,9 +7,11 @@
 
 import Foundation
 import Combine
+import YumemiWeather
 
 final class WeatherViewModel: ObservableObject {
     @Published private(set) var weather: Weather? = nil
+    @Published private(set) var yumemiWeatherError: YumemiWeatherError? = nil
     
     private var apiSubscriptions: Set<AnyCancellable> = .init()
     private let yumemiWeatherAPIClient: YumemiWeatherAPIClientProtocol
@@ -27,6 +29,18 @@ final class WeatherViewModel: ObservableObject {
                 }
             }
             .assign(to: \.weather, on: self)
+            .store(in: &apiSubscriptions)
+        
+        yumemiWeatherAPIClient.weather
+            .compactMap { result in
+                switch result {
+                case .failure(let error):
+                    return error
+                default:
+                    return nil
+                }
+            }
+            .assign(to: \.yumemiWeatherError, on: self)
             .store(in: &apiSubscriptions)
     }
     
