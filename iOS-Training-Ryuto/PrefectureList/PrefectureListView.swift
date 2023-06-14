@@ -11,15 +11,13 @@ struct PrefectureListView: View {
     @State private var searchText: String = ""
     
     private var searchResults: [Prefecture] {
-        get {
-            if searchText.isEmpty { return [] }
-            else {
-                let filteredPrefectures = regions
-                    .flatMap { $1 }
-                    .filter { $0.id.contains(searchText) }
-                
-                return filteredPrefectures
-            }
+        if searchText.isEmpty { return [] }
+        else {
+            let filteredPrefectures = regions
+                .flatMap { $1 }
+                .filter { $0.id.contains(searchText) }
+            
+            return filteredPrefectures
         }
     }
     
