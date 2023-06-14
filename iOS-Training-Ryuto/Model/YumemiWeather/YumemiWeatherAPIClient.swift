@@ -21,11 +21,15 @@ final class YumemiWeatherAPIClient: YumemiWeatherAPIClientProtocol {
     func fetchWeatherCondition(jsonString: String) {
         do {
             let response = try YumemiWeather.fetchWeather(jsonString)
-            guard let responseData = response.data(using: .utf8) else { return }
+            guard let responseData = response.data(using: .utf8) else {
+                self.weather.send(.failure(.invalidParameterError))
+                return
+            }
             let weather = try JSONHelper.decode(Weather.self, data: responseData)
+            
             self.weather.send(.success(weather))
         } catch {
-            print(error)
+            self.weather.send(.failure(.unknownError))
         }
     }
     
