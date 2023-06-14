@@ -18,6 +18,12 @@ struct PrefectureRowView: View {
                 .scaledToFit()
                 .frame(width: 50)
                 .colorInvert(if: colorScheme == .dark) // ダークモード時に色を反転
+                .cornerRadius(10)
+                .overlay {
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(.primary, lineWidth: 1)
+                        
+                }
             
             Text(prefecture.id)
         }
@@ -35,5 +41,6 @@ private extension View {
 struct PrefectureRowView_Previews: PreviewProvider {
     static var previews: some View {
         PrefectureRowView(prefecture: Prefecture(id: "東京都", imageName: "Tokyo"))
+            .environment(\.colorScheme, .dark)
     }
 }
