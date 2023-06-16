@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		D40CA1F12A385EC3009BE8AA /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = D40CA1F02A385EC3009BE8AA /* RswiftLibrary */; };
-		D422ECB82A32F627005586AD /* Prefecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = D422ECB72A32F627005586AD /* Prefecture.swift */; };
 		D422ECAF2A32AEE2005586AD /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D422ECAE2A32AEE2005586AD /* DateHelper.swift */; };
 		D422ECB62A32D993005586AD /* YumemiWetherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D422ECB52A32D993005586AD /* YumemiWetherRequest.swift */; };
+		D422ECB82A32F627005586AD /* Prefecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = D422ECB72A32F627005586AD /* Prefecture.swift */; };
 		D443104A2A2F04EF00F63095 /* iOS_Training_RyutoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44310492A2F04EF00F63095 /* iOS_Training_RyutoApp.swift */; };
 		D443104E2A2F04F100F63095 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D443104D2A2F04F100F63095 /* Assets.xcassets */; };
 		D44310512A2F04F100F63095 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D44310502A2F04F100F63095 /* Preview Assets.xcassets */; };
@@ -20,6 +20,7 @@
 		D44310742A2F086C00F63095 /* PrefectureListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44310732A2F086C00F63095 /* PrefectureListView.swift */; };
 		D44310762A2F0BD900F63095 /* PrefectureRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44310752A2F0BD900F63095 /* PrefectureRowView.swift */; };
 		D44310792A2F39A500F63095 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44310782A2F39A500F63095 /* WeatherView.swift */; };
+		D48F10AD2A3BFD2F001727D0 /* YumemiWeatherError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F10AC2A3BFD2F001727D0 /* YumemiWeatherError.swift */; };
 		D4FB92B52A306679000DCFC2 /* YumemiWeather in Frameworks */ = {isa = PBXBuildFile; productRef = D4FB92B42A306679000DCFC2 /* YumemiWeather */; };
 		D4FB92B72A3066BF000DCFC2 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FB92B62A3066BF000DCFC2 /* Weather.swift */; };
 		D4FB92B92A3078A4000DCFC2 /* WeatherCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FB92B82A3078A3000DCFC2 /* WeatherCondition.swift */; };
@@ -46,9 +47,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D422ECB72A32F627005586AD /* Prefecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prefecture.swift; sourceTree = "<group>"; };
 		D422ECAE2A32AEE2005586AD /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		D422ECB52A32D993005586AD /* YumemiWetherRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YumemiWetherRequest.swift; sourceTree = "<group>"; };
+		D422ECB72A32F627005586AD /* Prefecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prefecture.swift; sourceTree = "<group>"; };
 		D44310462A2F04EF00F63095 /* iOS-Training-Ryuto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Training-Ryuto.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D44310492A2F04EF00F63095 /* iOS_Training_RyutoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_Training_RyutoApp.swift; sourceTree = "<group>"; };
 		D443104D2A2F04F100F63095 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -61,6 +62,7 @@
 		D44310732A2F086C00F63095 /* PrefectureListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefectureListView.swift; sourceTree = "<group>"; };
 		D44310752A2F0BD900F63095 /* PrefectureRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefectureRowView.swift; sourceTree = "<group>"; };
 		D44310782A2F39A500F63095 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		D48F10AC2A3BFD2F001727D0 /* YumemiWeatherError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YumemiWeatherError.swift; sourceTree = "<group>"; };
 		D4FB92B62A3066BF000DCFC2 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		D4FB92B82A3078A3000DCFC2 /* WeatherCondition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCondition.swift; sourceTree = "<group>"; };
 		D4FB92BA2A307CAE000DCFC2 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				D44310492A2F04EF00F63095 /* iOS_Training_RyutoApp.swift */,
+				D48F10AA2A3BFD1C001727D0 /* Extension */,
 				D422ECB02A32B926005586AD /* Helper */,
 				D4FB92B22A3065D6000DCFC2 /* UI */,
 				D422ECB12A32B93A005586AD /* Model */,
@@ -197,6 +200,14 @@
 				D44310752A2F0BD900F63095 /* PrefectureRowView.swift */,
 			);
 			path = PrefectureList;
+			sourceTree = "<group>";
+		};
+		D48F10AA2A3BFD1C001727D0 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D48F10AC2A3BFD2F001727D0 /* YumemiWeatherError.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		D4FB92B12A3065C7000DCFC2 /* WeatherView */ = {
@@ -366,6 +377,7 @@
 				D4FB92BB2A307CAE000DCFC2 /* WeatherViewModel.swift in Sources */,
 				D443104A2A2F04EF00F63095 /* iOS_Training_RyutoApp.swift in Sources */,
 				D4FB92B92A3078A4000DCFC2 /* WeatherCondition.swift in Sources */,
+				D48F10AD2A3BFD2F001727D0 /* YumemiWeatherError.swift in Sources */,
 				D422ECAF2A32AEE2005586AD /* DateHelper.swift in Sources */,
 				D4FB92BF2A3083D3000DCFC2 /* JSONHelper.swift in Sources */,
 			);
@@ -704,8 +716,8 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 7.0.0;
-            };
-        };
+			};
+		};
 		D4FB92B32A306679000DCFC2 /* XCRemoteSwiftPackageReference "ios-training" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/yumemi-inc/ios-training.git";
@@ -725,7 +737,7 @@
 		D40CA1F22A385ECE009BE8AA /* RswiftGenerateInternalResources */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = "plugin:RswiftGenerateInternalResources";
-        };
+		};
 		D4FB92B42A306679000DCFC2 /* YumemiWeather */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D4FB92B32A306679000DCFC2 /* XCRemoteSwiftPackageReference "ios-training" */;
