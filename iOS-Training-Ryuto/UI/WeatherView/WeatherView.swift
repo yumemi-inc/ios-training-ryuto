@@ -9,11 +9,7 @@ import SwiftUI
 
 struct WeatherView: View {
     let prefecture: Prefecture
-    
     @ObservedObject private var viewModel = WeatherViewModel()
-    @Environment(\.dismiss) private var dismiss
-    
-    @State private var request: YumemiWeatherRequest? = nil
     
     var body: some View {
         ZStack {
