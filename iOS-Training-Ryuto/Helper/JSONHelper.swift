@@ -23,8 +23,10 @@ final class JSONHelper {
 }
 
 extension JSONHelper {
-    func encodeToString<T: Encodable>(_ model: T) throws -> String? {
+    static func encodeToString<T: Encodable>(_ model: T) throws -> String? {
         do {
+            let encoder = JSONEncoder()
+            encoder.dateEncodingStrategy = .iso8601
             let jsonData = try encoder.encode(model)
             return String(data: jsonData, encoding: .utf8)
         } catch {
