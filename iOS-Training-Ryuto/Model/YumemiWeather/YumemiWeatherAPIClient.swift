@@ -29,8 +29,9 @@ final class YumemiWeatherAPIClient: YumemiWeatherAPIClientProtocol {
             
             self.weather.send(.success(weather))
         } catch {
-            self.weather.send(.failure(.unknownError))
+            if let yumemiWeatherError = error as? YumemiWeatherError {
+                self.weather.send(.failure(yumemiWeatherError))
+            }
         }
     }
-    
 }
