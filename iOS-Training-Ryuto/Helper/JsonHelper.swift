@@ -13,6 +13,7 @@ final class JSONHelper {
         encoder.dateEncodingStrategy = .iso8601
         return encoder
     }()
+    
     private static let decoder: JSONDecoder = {
        let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
