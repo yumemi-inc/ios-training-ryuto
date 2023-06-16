@@ -6,7 +6,12 @@
 //
 
 import XCTest
+@testable import iOS_Training_Ryuto
 
 final class YumemiWeatherAPIClientTests: XCTestCase {
+    var client: YumemiWeatherAPIClient!
     
+    override func setUp() {
+        client = YumemiWeatherAPIClient()
+    }
 }
