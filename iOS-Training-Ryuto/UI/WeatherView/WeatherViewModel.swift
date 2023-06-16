@@ -11,7 +11,7 @@ import YumemiWeather
 
 final class WeatherViewModel: ObservableObject {
     @Published private(set) var weather: Weather? = nil
-    @Published private(set) var yumemiWeatherError: YumemiWeatherError? = nil
+    @Published var yumemiWeatherError: YumemiWeatherError? = nil
     
     private var apiSubscriptions: Set<AnyCancellable> = .init()
     private let yumemiWeatherAPIClient: YumemiWeatherAPIClientProtocol
