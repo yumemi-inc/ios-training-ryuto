@@ -21,24 +21,16 @@ final class WeatherViewModel: ObservableObject {
         
         yumemiWeatherAPIClient.weather
             .compactMap { result in
-                switch result {
-                case .success(let weather):
-                    return weather
-                default:
-                    return nil
-                }
+                guard case let .success(weather) = result else { return nil }
+                return weather
             }
             .assign(to: \.weather, on: self)
             .store(in: &apiSubscriptions)
         
         yumemiWeatherAPIClient.weather
             .compactMap { result in
-                switch result {
-                case .failure(let error):
-                    return error
-                default:
-                    return nil
-                }
+                guard case let .failure(error) = result else { return nil }
+                return error
             }
             .assign(to: \.yumemiWeatherError, on: self)
             .store(in: &apiSubscriptions)
