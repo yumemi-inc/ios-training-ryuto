@@ -11,7 +11,6 @@ struct WeatherView: View {
     let prefecture: Prefecture
     @StateObject private var viewModel = WeatherViewModel()
     
-    
     var body: some View {
         ZStack {
             // 背景色を設定
