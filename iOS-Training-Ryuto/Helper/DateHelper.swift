@@ -8,10 +8,16 @@
 import Foundation
 
 final class DateHelper {
-    static func formatToString(date: Date, dateFormat: String) -> String {
-        let dateFormatter = DateFormatter()
+    private static let dateFormatter: DateFormatter = {
+       let dateFormatter = DateFormatter()
         dateFormatter.calendar = Calendar(identifier: .gregorian)
         dateFormatter.locale = Locale(identifier: "jp_JP")
+        return dateFormatter
+    }()
+}
+
+extension DateHelper {
+    static func formatToString(date: Date, dateFormat: String) -> String {
         dateFormatter.dateFormat = dateFormat
         return dateFormatter.string(from: date)
     }
