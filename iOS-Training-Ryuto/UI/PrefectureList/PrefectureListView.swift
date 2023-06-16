@@ -96,13 +96,17 @@ struct PrefectureListView: View {
                     ForEach(regions, id: \.0) { region, prefectures in
                         Section(region) {
                             ForEach(prefectures) { prefecture in
-                                PrefectureRowView(prefecture: prefecture)
+                                NavigationLink(destination: WeatherView(prefecture: prefecture)) {
+                                    PrefectureRowView(prefecture: prefecture)
+                                }
                             }
                         }
                     }
                 } else {
                     ForEach(searchResults) { prefecture in
-                        PrefectureRowView(prefecture: prefecture)
+                        NavigationLink(destination: WeatherView(prefecture: prefecture)) {
+                            PrefectureRowView(prefecture: prefecture)
+                        }
                     }
                 }
             }
@@ -111,6 +115,7 @@ struct PrefectureListView: View {
             .searchable(text: $searchText,
                         placement: .navigationBarDrawer(displayMode: .always))
         }
+        .tint(.white)
     }
 }
 

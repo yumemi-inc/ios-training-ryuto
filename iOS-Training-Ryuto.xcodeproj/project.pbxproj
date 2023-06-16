@@ -17,6 +17,7 @@
 		D44310672A2F04F100F63095 /* iOS_Training_RyutoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44310662A2F04F100F63095 /* iOS_Training_RyutoUITestsLaunchTests.swift */; };
 		D44310742A2F086C00F63095 /* PrefectureListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44310732A2F086C00F63095 /* PrefectureListView.swift */; };
 		D44310762A2F0BD900F63095 /* PrefectureRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44310752A2F0BD900F63095 /* PrefectureRowView.swift */; };
+		D44310792A2F39A500F63095 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44310782A2F39A500F63095 /* WeatherView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		D44310662A2F04F100F63095 /* iOS_Training_RyutoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_Training_RyutoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D44310732A2F086C00F63095 /* PrefectureListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefectureListView.swift; sourceTree = "<group>"; };
 		D44310752A2F0BD900F63095 /* PrefectureRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefectureRowView.swift; sourceTree = "<group>"; };
+		D44310782A2F39A500F63095 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				D44310492A2F04EF00F63095 /* iOS_Training_RyutoApp.swift */,
-				D44310772A2F0CFA00F63095 /* PrefectureList */,
+				D4FB92B22A3065D6000DCFC2 /* UI */,
 				D443104D2A2F04F100F63095 /* Assets.xcassets */,
 				D443104F2A2F04F100F63095 /* Preview Content */,
 			);
@@ -141,6 +143,23 @@
 				D44310752A2F0BD900F63095 /* PrefectureRowView.swift */,
 			);
 			path = PrefectureList;
+			sourceTree = "<group>";
+		};
+		D4FB92B12A3065C7000DCFC2 /* WeatherView */ = {
+			isa = PBXGroup;
+			children = (
+				D44310782A2F39A500F63095 /* WeatherView.swift */,
+			);
+			path = WeatherView;
+			sourceTree = "<group>";
+		};
+		D4FB92B22A3065D6000DCFC2 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D44310772A2F0CFA00F63095 /* PrefectureList */,
+				D4FB92B12A3065C7000DCFC2 /* WeatherView */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,6 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D44310792A2F39A500F63095 /* WeatherView.swift in Sources */,
 				D44310742A2F086C00F63095 /* PrefectureListView.swift in Sources */,
 				D422ECB82A32F627005586AD /* Prefecture.swift in Sources */,
 				D44310762A2F0BD900F63095 /* PrefectureRowView.swift in Sources */,
