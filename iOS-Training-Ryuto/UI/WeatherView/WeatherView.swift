@@ -27,6 +27,11 @@ struct WeatherView: View {
             }
             .foregroundColor(.white)
         }
+        .alert("エラー発生", isPresented: .constant(viewModel.yumemiWeatherError != nil)) {
+            Button("OK") { viewModel.yumemiWeatherError = nil }
+        } message: {
+            Text(viewModel.yumemiWeatherError?.localizedDescription ?? "")
+        }
         .onAppear {
             viewModel.fetchWeatherCondition(area: prefecture.id, date: Date.now)
         }
