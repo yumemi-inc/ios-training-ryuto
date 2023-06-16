@@ -22,7 +22,7 @@ final class YumemiWeatherAPIClient: YumemiWeatherAPIClientProtocol {
         do {
             let response = try YumemiWeather.fetchWeather(jsonString)
             guard let responseData = response.data(using: .utf8) else { return }
-            let weather = try JSONHelper.shared.decode(Weather.self, data: responseData)
+            let weather = try JSONHelper.decode(Weather.self, data: responseData)
             self.weather.send(weather)
         } catch {
             print(error)

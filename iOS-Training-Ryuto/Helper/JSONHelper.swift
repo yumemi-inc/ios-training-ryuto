@@ -34,8 +34,10 @@ extension JSONHelper {
         }
     }
     
-    func decode<T: Decodable>(_ model: T.Type, data: Data) throws -> T {
+    static func decode<T: Decodable>(_ model: T.Type, data: Data) throws -> T {
         do {
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .iso8601
             return try decoder.decode(model, from: data)
         } catch {
             throw error
