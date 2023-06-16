@@ -19,7 +19,10 @@ final class DateHelper {
 }
 
 extension DateHelper {
-    func formatToString(date: Date, dateFormat: String) -> String {
+    static func formatToString(date: Date, dateFormat: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.calendar = Calendar(identifier: .gregorian)
+        dateFormatter.locale = Locale(identifier: "jp_JP")
         dateFormatter.dateFormat = dateFormat
         return dateFormatter.string(from: date)
     }
