@@ -31,18 +31,13 @@ struct WeatherView: View {
             .foregroundColor(.white)
         }
         .onAppear {
-            request = YumemiWeatherRequest(area: prefecture.id, date: Date.now)
-            guard let jsonString = try? JSONHelper.encodeToString(request) else { return }
-            
-            viewModel.fetchWeatherCondition(jsonString: jsonString)
+            viewModel.fetchWeatherCondition(area: prefecture.id, date: Date.now)
         }
         .toolbar {
             // 再読み込みボタン
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
-                    guard let jsonString = try? JSONHelper.encodeToString(request) else { return }
-                    
-                    viewModel.fetchWeatherCondition(jsonString: jsonString)
+                    viewModel.fetchWeatherCondition(area: prefecture.id, date: Date.now)
                 } label: {
                     Image(systemName: "arrow.clockwise")
                         .foregroundColor(.white)

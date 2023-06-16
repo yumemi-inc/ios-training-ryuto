@@ -23,7 +23,10 @@ final class WeatherViewModel: ObservableObject {
             .store(in: &apiSubscriptions)
     }
     
-    func fetchWeatherCondition(jsonString: String) {
+    func fetchWeatherCondition(area: String, date: Date) {
+        let request = YumemiWeatherRequest(area: area, date: date)
+        guard let jsonString = try? JSONHelper.encodeToString(request) else { return }
         yumemiWeatherAPIClient.fetchWeatherCondition(jsonString: jsonString)
     }
+
 }
