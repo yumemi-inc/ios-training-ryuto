@@ -8,21 +8,6 @@
 import Foundation
 
 final class JSONHelper {
-    private let encoder: JSONEncoder
-    private let decoder: JSONDecoder
-    
-    static let shared = JSONHelper()
-    
-    private init() {
-        self.encoder = JSONEncoder()
-        self.encoder.dateEncodingStrategy = .iso8601
-        
-        self.decoder = JSONDecoder()
-        self.decoder.dateDecodingStrategy = .iso8601
-    }
-}
-
-extension JSONHelper {
     static func encodeToString<T: Encodable>(_ model: T) throws -> String? {
         do {
             let encoder = JSONEncoder()
