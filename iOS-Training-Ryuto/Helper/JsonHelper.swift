@@ -8,10 +8,21 @@
 import Foundation
 
 final class JSONHelper {
+    private static let encoder: JSONEncoder = {
+        let encoder = JSONEncoder()
+        encoder.dateEncodingStrategy = .iso8601
+        return encoder
+    }()
+    private static let decoder: JSONDecoder = {
+       let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        return decoder
+    }()
+}
+
+extension JSONHelper {
     static func encodeToString<T: Encodable>(_ model: T) throws -> String? {
         do {
-            let encoder = JSONEncoder()
-            encoder.dateEncodingStrategy = .iso8601
             let jsonData = try encoder.encode(model)
             return String(data: jsonData, encoding: .utf8)
         } catch {
@@ -21,8 +32,6 @@ final class JSONHelper {
     
     static func decode<T: Decodable>(_ model: T.Type, data: Data) throws -> T {
         do {
-            let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .iso8601
             return try decoder.decode(model, from: data)
         } catch {
             throw error
