@@ -12,15 +12,6 @@ enum WeatherCondition: String, Decodable {
     case cloudy
     case rainy
     
-    init(condition: String) {
-        switch condition {
-        case "sunny" : self = .sunny
-        case "cloudy": self = .cloudy
-        case "rainy" : self = .rainy
-        default      : self = .sunny
-        }
-    }
-    
     var rawValue: String {
         switch self {
         case .sunny:
