@@ -11,7 +11,7 @@ final class DateHelper {
     private static let dateFormatter: DateFormatter = {
        let dateFormatter = DateFormatter()
         dateFormatter.calendar = Calendar(identifier: .gregorian)
-        dateFormatter.locale = Locale(identifier: "ja_JP")
+        dateFormatter.locale = Locale(identifier: "jp_JP")
         return dateFormatter
     }()
 }
