@@ -10,23 +10,13 @@ import Combine
 import YumemiWeather
 
 protocol YumemiWeatherAPIClientProtocol {
-    var weather: PassthroughSubject<Weather, Never> { get set }
-    
-    func fetchWeatherCondition(jsonString: String)
+    func fetchWeatherCondition(jsonString: String) throws -> Weather?
 }
 
 final class YumemiWeatherAPIClient: YumemiWeatherAPIClientProtocol {
-    var weather = PassthroughSubject<Weather, Never>()
-    
-    func fetchWeatherCondition(jsonString: String) {
-        do {
-            let response = try YumemiWeather.fetchWeather(jsonString)
-            guard let responseData = response.data(using: .utf8) else { return }
-            let weather = try JSONHelper.decode(Weather.self, data: responseData)
-            self.weather.send(weather)
-        } catch {
-            print(error)
-        }
+    func fetchWeatherCondition(jsonString: String) throws -> Weather? {
+        let response = try YumemiWeather.fetchWeather(jsonString)
+        guard let responseData = response.data(using: .utf8) else { return nil }
+        return try JSONHelper.decode(Weather.self, data: responseData)
     }
-    
 }

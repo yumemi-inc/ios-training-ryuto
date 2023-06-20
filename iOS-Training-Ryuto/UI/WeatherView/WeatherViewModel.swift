@@ -6,27 +6,20 @@
 //
 
 import Foundation
-import Combine
 
 final class WeatherViewModel: ObservableObject {
     @Published private(set) var weather: Weather? = nil
     
-    private var apiSubscriptions: Set<AnyCancellable> = .init()
     private let yumemiWeatherAPIClient: YumemiWeatherAPIClientProtocol
     
     init(yumemiWeatherAPIClient: YumemiWeatherAPIClientProtocol = YumemiWeatherAPIClient()) {
         self.yumemiWeatherAPIClient = yumemiWeatherAPIClient
-        
-        yumemiWeatherAPIClient.weather
-            .compactMap { $0 }
-            .assign(to: \.weather, on: self)
-            .store(in: &apiSubscriptions)
     }
     
     func fetchWeatherCondition(area: String, date: Date) {
         let request = YumemiWeatherRequest(area: area, date: date)
         guard let jsonString = try? JSONHelper.encodeToString(request) else { return }
-        yumemiWeatherAPIClient.fetchWeatherCondition(jsonString: jsonString)
+        weather = try? yumemiWeatherAPIClient.fetchWeatherCondition(jsonString: jsonString)
     }
 
 }
