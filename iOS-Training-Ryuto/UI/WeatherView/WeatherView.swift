@@ -102,7 +102,7 @@ extension WeatherView {
                 .font(.system(size: 20))
             }
             
-            Text(weather.condition.rawValue)
+            Text(weather.condition.localized)
                 .font(.system(size: 25))
         }
     }

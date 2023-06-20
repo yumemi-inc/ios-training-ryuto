@@ -12,7 +12,7 @@ enum WeatherCondition: String, Decodable {
     case cloudy
     case rainy
     
-    var rawValue: String {
+    var localized: String {
         switch self {
         case .sunny:
             return "晴れ"
