@@ -12,13 +12,11 @@ import YumemiWeather
 
 final class YumemiWeatherAPIClientTests: XCTestCase {
     var client: YumemiWeatherAPIClient!
-    var subscriptions: Set<AnyCancellable>!
     var weather: Weather?
     var error: YumemiWeatherError?
     
     override func setUp() {
         client = YumemiWeatherAPIClient()
-        subscriptions = Set<AnyCancellable>()
     }
     
     func testFetchWeatherCondition() {
