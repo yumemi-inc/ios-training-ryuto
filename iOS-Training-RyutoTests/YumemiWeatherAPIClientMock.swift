@@ -10,10 +10,19 @@ import Combine
 import YumemiWeather
 @testable import iOS_Training_Ryuto
 
-final class YumemiWeatherAPIClientMock {
+final class YumemiWeatherAPIClientMock: YumemiWeatherAPIClientProtocol {
     let yumemiWeatherError: YumemiWeatherError?
     
     init(yumemiWeatherError: YumemiWeatherError? = nil) {
         self.yumemiWeatherError = yumemiWeatherError
     }
+    
+    func fetchWeatherCondition(jsonString: String) throws -> Weather? {
+        if let error = yumemiWeatherError {
+            throw error
+        }
+        
+        return YumemiWeatherSampleData.sampleData
+    }
 }
+
