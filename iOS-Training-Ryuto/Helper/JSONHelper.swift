@@ -15,7 +15,7 @@ final class JSONHelper {
     }()
     
     private static let decoder: JSONDecoder = {
-       let decoder = JSONDecoder()
+        let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
         return decoder
     }()
@@ -23,19 +23,11 @@ final class JSONHelper {
 
 extension JSONHelper {
     static func encodeToString<T: Encodable>(_ model: T) throws -> String? {
-        do {
-            let jsonData = try encoder.encode(model)
-            return String(data: jsonData, encoding: .utf8)
-        } catch {
-            throw error
-        }
+        let jsonData = try encoder.encode(model)
+        return String(data: jsonData, encoding: .utf8)
     }
     
     static func decode<T: Decodable>(_ model: T.Type, data: Data) throws -> T {
-        do {
-            return try decoder.decode(model, from: data)
-        } catch {
-            throw error
-        }
+        return try decoder.decode(model, from: data)
     }
 }
