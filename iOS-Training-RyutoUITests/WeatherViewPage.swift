@@ -63,4 +63,7 @@ extension WeatherViewPage {
     var existsConditionImage: Bool { conditionImage.exists }
     var existsAlertButton: Bool { alertButton.exists }
     var existsReloadButton: Bool { reloadButton.exists }
+    
+    var conditionTextLabel: String { conditionText.label }
+    var conditionImageLabel: String { conditionImage.label }
 }
