@@ -66,6 +66,7 @@ extension WeatherView {
             Text(prefecture.id)
                 .font(.title)
                 .fontWeight(.bold)
+                .accessibilityIdentifier("weather_prefecture_name")
             
             if let weather = viewModel.weather {
                 Text(DateHelper.formatToString(date: weather.date, dateFormat: "yyyy年M月d日") + "の天気")
@@ -82,6 +83,7 @@ extension WeatherView {
                     .scaledToFit()
                     .frame(width: 150, height: 150)
                     .foregroundColor(weather.condition.imageColor)
+                    .accessibilityIdentifier("weather_condition_image")
                 
                 VStack(alignment: .leading, spacing: 10) {
                     HStack(spacing: 3) {
@@ -109,6 +111,7 @@ extension WeatherView {
             
             Text(weather.condition.localized)
                 .font(.system(size: 25))
+                .accessibilityIdentifier("weather_condition_text")
         }
     }
 }
