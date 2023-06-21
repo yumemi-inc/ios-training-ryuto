@@ -112,7 +112,7 @@ struct PrefectureListView: View {
                     }
                 }
             }
-            .accessibilityIdentifier("prefecute_list")
+            .accessibilityIdentifier("prefecture_list")
             .navigationTitle("天気検索アプリ")
             .navigationBarTitleDisplayMode(.inline)
             .searchable(text: $searchText,
