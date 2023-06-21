@@ -33,6 +33,7 @@ struct WeatherView: View {
                 dismiss()
             }
             Button("OK") { viewModel.yumemiWeatherError = nil }
+                .accessibilityIdentifier("weather_alert_button")
         } message: {
             Text(viewModel.yumemiWeatherError?.localizedDescription ?? "")
         }
@@ -48,6 +49,7 @@ struct WeatherView: View {
                     Image(systemName: "arrow.clockwise")
                         .foregroundColor(.white)
                 }
+                .accessibilityIdentifier("weather_reload_button")
             }
         }
     }
