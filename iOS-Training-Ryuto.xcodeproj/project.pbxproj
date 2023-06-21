@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D4082E842A42C10A005BD44C /* PageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4082E832A42C10A005BD44C /* PageObject.swift */; };
 		D4082E872A42C163005BD44C /* PrefectureListViewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4082E862A42C163005BD44C /* PrefectureListViewPage.swift */; };
+		D4082E8A2A42CEFB005BD44C /* WeatherViewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4082E892A42CEFB005BD44C /* WeatherViewPage.swift */; };
 		D40CA1F12A385EC3009BE8AA /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = D40CA1F02A385EC3009BE8AA /* RswiftLibrary */; };
 		D422ECAF2A32AEE2005586AD /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D422ECAE2A32AEE2005586AD /* DateHelper.swift */; };
 		D422ECB62A32D993005586AD /* YumemiWetherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D422ECB52A32D993005586AD /* YumemiWetherRequest.swift */; };
@@ -56,6 +57,7 @@
 /* Begin PBXFileReference section */
 		D4082E832A42C10A005BD44C /* PageObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageObject.swift; sourceTree = "<group>"; };
 		D4082E862A42C163005BD44C /* PrefectureListViewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefectureListViewPage.swift; sourceTree = "<group>"; };
+		D4082E892A42CEFB005BD44C /* WeatherViewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewPage.swift; sourceTree = "<group>"; };
 		D422ECAE2A32AEE2005586AD /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		D422ECB52A32D993005586AD /* YumemiWetherRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YumemiWetherRequest.swift; sourceTree = "<group>"; };
 		D422ECB72A32F627005586AD /* Prefecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prefecture.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				D44310662A2F04F100F63095 /* iOS_Training_RyutoUITestsLaunchTests.swift */,
 				D4082E832A42C10A005BD44C /* PageObject.swift */,
 				D4082E862A42C163005BD44C /* PrefectureListViewPage.swift */,
+				D4082E892A42CEFB005BD44C /* WeatherViewPage.swift */,
 			);
 			path = "iOS-Training-RyutoUITests";
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 			files = (
 				D4082E872A42C163005BD44C /* PrefectureListViewPage.swift in Sources */,
 				D44310672A2F04F100F63095 /* iOS_Training_RyutoUITestsLaunchTests.swift in Sources */,
+				D4082E8A2A42CEFB005BD44C /* WeatherViewPage.swift in Sources */,
 				D44310652A2F04F100F63095 /* iOS_Training_RyutoUITests.swift in Sources */,
 				D45292FA2A41ADF800912676 /* WeatherViewUITest.swift in Sources */,
 				D4082E842A42C10A005BD44C /* PageObject.swift in Sources */,
