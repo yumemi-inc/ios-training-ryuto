@@ -9,6 +9,12 @@ import Foundation
 import XCTest
 
 final class PrefectureListViewPage: PageObject {
+    
+    enum IDs {
+        static let prefectureList = "prefecture_list"
+        static let prefectureListRow = "prefecture_list_row"
+    }
+    
     private let app: XCUIApplication
     required init(application: XCUIApplication) {
         self.app = application
