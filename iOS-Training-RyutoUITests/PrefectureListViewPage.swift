@@ -19,6 +19,14 @@ final class PrefectureListViewPage: PageObject {
     required init(application: XCUIApplication) {
         self.app = application
     }
+    
+    private var prefectureList: XCUIElement {
+        app.collectionViews[IDs.prefectureList]
+    }
+    
+    private var prefectureListRow: XCUIElement {
+        prefectureList.cells.element(boundBy: 1)
+    }
 }
 
 extension PrefectureListViewPage {
