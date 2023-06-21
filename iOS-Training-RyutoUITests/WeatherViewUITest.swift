@@ -20,4 +20,22 @@ final class WeatherViewUITest: XCTestCase {
         app.terminate()
         super.tearDown()
     }
+    
+    func testWeatherImage() {
+        let prefectureListView = PrefectureListViewPage(application: app)
+        let weatherView = prefectureListView.goWeatherView()
+
+        weatherView.reloadScreenWithoutError()
+
+        switch weatherView.conditionTextLabel {
+        case "晴れ":
+            XCTAssertEqual(weatherView.conditionImageLabel, "Brightness Higher")
+        case "曇り":
+            XCTAssertEqual(weatherView.conditionImageLabel, "Mostly Cloudy")
+        case "雨":
+            XCTAssertEqual(weatherView.conditionImageLabel, "Rain")
+        default:
+            XCTFail()
+        }
+    }
 }
