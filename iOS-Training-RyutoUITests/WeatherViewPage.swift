@@ -23,23 +23,23 @@ final class WeatherViewPage: PageObject {
         self.app = application
     }
     
-    var prefectureText: XCUIElement {
+    private var prefectureText: XCUIElement {
         return app.staticTexts[IDs.prefectureText]
     }
     
-    var conditionText: XCUIElement {
+    private var conditionText: XCUIElement {
         return app.staticTexts[IDs.conditionText]
     }
     
-    var conditionImage: XCUIElement {
+    private var conditionImage: XCUIElement {
         return app.images[IDs.conditionImage]
     }
     
-    var alertButton: XCUIElement {
+    private var alertButton: XCUIElement {
         return app.buttons[IDs.alertButton]
     }
     
-    var reloadButton :XCUIElement {
+    private var reloadButton :XCUIElement {
         return app.buttons[IDs.reloadButton]
     }
 }
