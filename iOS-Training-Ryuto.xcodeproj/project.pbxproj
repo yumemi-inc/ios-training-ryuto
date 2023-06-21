@@ -76,6 +76,7 @@
 		D45292EE2A41A55700912676 /* YumemiWeatherSampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YumemiWeatherSampleData.swift; sourceTree = "<group>"; };
 		D45292F12A41A82100912676 /* WeatherViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModelTest.swift; sourceTree = "<group>"; };
 		D45292F92A41ADF800912676 /* WeatherViewUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewUITest.swift; sourceTree = "<group>"; };
+		D46A09662A42E7930081478C /* iOS-Training-Ryuto.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "iOS-Training-Ryuto.xctestplan"; sourceTree = "<group>"; };
 		D48F10AC2A3BFD2F001727D0 /* YumemiWeatherError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YumemiWeatherError.swift; sourceTree = "<group>"; };
 		D48F10B32A3C1468001727D0 /* YumemiWeatherAPIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YumemiWeatherAPIClientTests.swift; sourceTree = "<group>"; };
 		D48F10BB2A3C3CCB001727D0 /* YumemiWeatherAPIClientMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YumemiWeatherAPIClientMock.swift; sourceTree = "<group>"; };
@@ -152,6 +153,7 @@
 		D443103D2A2F04EF00F63095 = {
 			isa = PBXGroup;
 			children = (
+				D46A09662A42E7930081478C /* iOS-Training-Ryuto.xctestplan */,
 				D44310482A2F04EF00F63095 /* iOS-Training-Ryuto */,
 				D44310592A2F04F100F63095 /* iOS-Training-RyutoTests */,
 				D44310632A2F04F100F63095 /* iOS-Training-RyutoUITests */,

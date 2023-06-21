@@ -15,6 +15,9 @@ final class WeatherViewModel: ObservableObject {
     private let yumemiWeatherAPIClient: YumemiWeatherAPIClientProtocol
     
     init(yumemiWeatherAPIClient: YumemiWeatherAPIClientProtocol = YumemiWeatherAPIClient()) {
+        // テスト
+//        self.yumemiWeatherAPIClient = Mock()
+        // 本番
         self.yumemiWeatherAPIClient = yumemiWeatherAPIClient
     }
     
