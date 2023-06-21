@@ -48,6 +48,12 @@ final class WeatherViewPage: PageObject {
             reloadButton.tap()
         }
     }
+    
+    func reloadScreenUntillError() {
+        while(!existsAlertButton) {
+            reloadButton.tap()
+        }
+    }
 }
 
 extension WeatherViewPage {
