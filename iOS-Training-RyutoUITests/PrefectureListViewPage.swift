@@ -27,6 +27,10 @@ final class PrefectureListViewPage: PageObject {
     private var prefectureListRow: XCUIElement {
         prefectureList.cells.element(boundBy: 1)
     }
+    
+    func goWeatherView() {
+        prefectureListRow.tap()
+    }
 }
 
 extension PrefectureListViewPage {
