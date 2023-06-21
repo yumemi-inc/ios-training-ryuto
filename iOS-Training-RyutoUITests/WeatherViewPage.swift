@@ -57,7 +57,6 @@ final class WeatherViewPage: PageObject {
 }
 
 extension WeatherViewPage {
-    var existsPage: Bool { true }
     var existsPrefectureText: Bool { prefectureText.exists }
     var existsConditionText: Bool { conditionText.exists }
     var existsConditionImage: Bool { conditionImage.exists }

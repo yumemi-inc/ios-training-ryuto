@@ -8,10 +8,6 @@
 import Foundation
 import XCTest
 
-protocol PageObject: PageObjectAssertion {
+protocol PageObject {
     init(application: XCUIApplication)
-}
-
-protocol PageObjectAssertion {
-    var existsPage: Bool { get }
 }

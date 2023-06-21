@@ -33,7 +33,3 @@ final class PrefectureListViewPage: PageObject {
         return WeatherViewPage(application: app)
     }
 }
-
-extension PrefectureListViewPage {
-    var existsPage: Bool { true }
-}
