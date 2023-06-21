@@ -9,6 +9,13 @@ import Foundation
 import XCTest
 
 final class WeatherViewPage: PageObject {
+    
+    enum IDs {
+        static let prefectureText = "weather_prefecture_name"
+        static let conditionText = "weather_condition_image"
+        static let conditionImage = "weather_condition_text"
+    }
+    
     private let app: XCUIApplication
     required init(application: XCUIApplication) {
         self.app = application
