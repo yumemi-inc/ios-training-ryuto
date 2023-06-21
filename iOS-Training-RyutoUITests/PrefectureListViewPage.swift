@@ -28,8 +28,9 @@ final class PrefectureListViewPage: PageObject {
         prefectureList.cells.element(boundBy: 1)
     }
     
-    func goWeatherView() {
+    func goWeatherView() -> WeatherViewPage {
         prefectureListRow.tap()
+        return WeatherViewPage(application: app)
     }
 }
 
