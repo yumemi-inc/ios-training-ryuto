@@ -38,4 +38,13 @@ final class WeatherViewUITest: XCTestCase {
             XCTFail()
         }
     }
+    
+    func testErrorAlert() {
+        let prefectureListView = PrefectureListViewPage(application: app)
+        let weatherView = prefectureListView.goWeatherView()
+        
+        weatherView.reloadScreenUntillError()
+        
+        XCTAssertTrue(weatherView.existsAlertButton)
+    }
 }
