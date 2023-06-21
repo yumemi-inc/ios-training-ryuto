@@ -42,6 +42,12 @@ final class WeatherViewPage: PageObject {
     private var reloadButton :XCUIElement {
         return app.buttons[IDs.reloadButton]
     }
+    
+    func reloadScreenWithoutError() {
+        while(existsAlertButton) {
+            reloadButton.tap()
+        }
+    }
 }
 
 extension WeatherViewPage {
