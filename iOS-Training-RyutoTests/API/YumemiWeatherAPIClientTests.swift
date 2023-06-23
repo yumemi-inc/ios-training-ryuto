@@ -63,6 +63,7 @@ final class YumemiWeatherAPIClientTests: XCTestCase {
             XCTAssertEqual(error, .invalidParameterError)
     }
     
+    
     func testAsyncFetchWeather_ValidJSON() async {
         let jsonString = """
             {
