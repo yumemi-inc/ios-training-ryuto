@@ -8,6 +8,7 @@
 import Foundation
 import YumemiWeather
 
+@MainActor
 final class WeatherViewModel: ObservableObject {
     @Published private(set) var weather: Weather? = nil
     @Published var yumemiWeatherError: YumemiWeatherError? = nil
