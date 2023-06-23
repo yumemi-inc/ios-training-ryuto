@@ -98,6 +98,7 @@ struct PrefectureListView: View {
                             ForEach(prefectures) { prefecture in
                                 NavigationLink(destination: WeatherView(prefecture: prefecture)) {
                                     PrefectureRowView(prefecture: prefecture)
+                                        .accessibilityIdentifier("prefecture_list_row")
                                 }
                             }
                         }
@@ -106,10 +107,12 @@ struct PrefectureListView: View {
                     ForEach(searchResults) { prefecture in
                         NavigationLink(destination: WeatherView(prefecture: prefecture)) {
                             PrefectureRowView(prefecture: prefecture)
+                                .accessibilityIdentifier("prefecture_list_row")
                         }
                     }
                 }
             }
+            .accessibilityIdentifier("prefecture_list")
             .navigationTitle("天気検索アプリ")
             .navigationBarTitleDisplayMode(.inline)
             .searchable(text: $searchText,

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D4082E842A42C10A005BD44C /* PageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4082E832A42C10A005BD44C /* PageObject.swift */; };
+		D4082E872A42C163005BD44C /* PrefectureListViewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4082E862A42C163005BD44C /* PrefectureListViewPage.swift */; };
+		D4082E8A2A42CEFB005BD44C /* WeatherViewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4082E892A42CEFB005BD44C /* WeatherViewPage.swift */; };
 		D40CA1F12A385EC3009BE8AA /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = D40CA1F02A385EC3009BE8AA /* RswiftLibrary */; };
 		D422ECAF2A32AEE2005586AD /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D422ECAE2A32AEE2005586AD /* DateHelper.swift */; };
 		D422ECB62A32D993005586AD /* YumemiWetherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D422ECB52A32D993005586AD /* YumemiWetherRequest.swift */; };
@@ -22,6 +25,7 @@
 		D44310792A2F39A500F63095 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44310782A2F39A500F63095 /* WeatherView.swift */; };
 		D45292EF2A41A55700912676 /* YumemiWeatherSampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45292EE2A41A55700912676 /* YumemiWeatherSampleData.swift */; };
 		D45292F22A41A82100912676 /* WeatherViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45292F12A41A82100912676 /* WeatherViewModelTest.swift */; };
+		D45292FA2A41ADF800912676 /* WeatherViewUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45292F92A41ADF800912676 /* WeatherViewUITest.swift */; };
 		D48F10AD2A3BFD2F001727D0 /* YumemiWeatherError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F10AC2A3BFD2F001727D0 /* YumemiWeatherError.swift */; };
 		D48F10B42A3C1468001727D0 /* YumemiWeatherAPIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F10B32A3C1468001727D0 /* YumemiWeatherAPIClientTests.swift */; };
 		D48F10BC2A3C3CCB001727D0 /* YumemiWeatherAPIClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F10BB2A3C3CCB001727D0 /* YumemiWeatherAPIClientMock.swift */; };
@@ -51,6 +55,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D4082E832A42C10A005BD44C /* PageObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageObject.swift; sourceTree = "<group>"; };
+		D4082E862A42C163005BD44C /* PrefectureListViewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefectureListViewPage.swift; sourceTree = "<group>"; };
+		D4082E892A42CEFB005BD44C /* WeatherViewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewPage.swift; sourceTree = "<group>"; };
 		D422ECAE2A32AEE2005586AD /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		D422ECB52A32D993005586AD /* YumemiWetherRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YumemiWetherRequest.swift; sourceTree = "<group>"; };
 		D422ECB72A32F627005586AD /* Prefecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prefecture.swift; sourceTree = "<group>"; };
@@ -68,6 +75,8 @@
 		D44310782A2F39A500F63095 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		D45292EE2A41A55700912676 /* YumemiWeatherSampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YumemiWeatherSampleData.swift; sourceTree = "<group>"; };
 		D45292F12A41A82100912676 /* WeatherViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModelTest.swift; sourceTree = "<group>"; };
+		D45292F92A41ADF800912676 /* WeatherViewUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewUITest.swift; sourceTree = "<group>"; };
+		D46A09662A42E7930081478C /* iOS-Training-Ryuto.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "iOS-Training-Ryuto.xctestplan"; sourceTree = "<group>"; };
 		D48F10AC2A3BFD2F001727D0 /* YumemiWeatherError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YumemiWeatherError.swift; sourceTree = "<group>"; };
 		D48F10B32A3C1468001727D0 /* YumemiWeatherAPIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YumemiWeatherAPIClientTests.swift; sourceTree = "<group>"; };
 		D48F10BB2A3C3CCB001727D0 /* YumemiWeatherAPIClientMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YumemiWeatherAPIClientMock.swift; sourceTree = "<group>"; };
@@ -144,6 +153,7 @@
 		D443103D2A2F04EF00F63095 = {
 			isa = PBXGroup;
 			children = (
+				D46A09662A42E7930081478C /* iOS-Training-Ryuto.xctestplan */,
 				D44310482A2F04EF00F63095 /* iOS-Training-Ryuto */,
 				D44310592A2F04F100F63095 /* iOS-Training-RyutoTests */,
 				D44310632A2F04F100F63095 /* iOS-Training-RyutoUITests */,
@@ -198,7 +208,9 @@
 		D44310632A2F04F100F63095 /* iOS-Training-RyutoUITests */ = {
 			isa = PBXGroup;
 			children = (
+				D4C594562A453546005DD0B3 /* PageObject */,
 				D44310642A2F04F100F63095 /* iOS_Training_RyutoUITests.swift */,
+				D45292F92A41ADF800912676 /* WeatherViewUITest.swift */,
 				D44310662A2F04F100F63095 /* iOS_Training_RyutoUITestsLaunchTests.swift */,
 			);
 			path = "iOS-Training-RyutoUITests";
@@ -252,6 +264,16 @@
 				D48F10AC2A3BFD2F001727D0 /* YumemiWeatherError.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		D4C594562A453546005DD0B3 /* PageObject */ = {
+			isa = PBXGroup;
+			children = (
+				D4082E832A42C10A005BD44C /* PageObject.swift */,
+				D4082E862A42C163005BD44C /* PrefectureListViewPage.swift */,
+				D4082E892A42CEFB005BD44C /* WeatherViewPage.swift */,
+			);
+			path = PageObject;
 			sourceTree = "<group>";
 		};
 		D4FB92B12A3065C7000DCFC2 /* WeatherView */ = {
@@ -443,8 +465,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4082E872A42C163005BD44C /* PrefectureListViewPage.swift in Sources */,
 				D44310672A2F04F100F63095 /* iOS_Training_RyutoUITestsLaunchTests.swift in Sources */,
+				D4082E8A2A42CEFB005BD44C /* WeatherViewPage.swift in Sources */,
 				D44310652A2F04F100F63095 /* iOS_Training_RyutoUITests.swift in Sources */,
+				D45292FA2A41ADF800912676 /* WeatherViewUITest.swift in Sources */,
+				D4082E842A42C10A005BD44C /* PageObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

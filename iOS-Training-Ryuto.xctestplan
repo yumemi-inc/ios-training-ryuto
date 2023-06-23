@@ -1,0 +1,39 @@
+{
+  "configurations" : [
+    {
+      "id" : "B69B1C4A-3447-4229-A880-5016768BF4BE",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "language" : "en",
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:iOS-Training-Ryuto.xcodeproj",
+      "identifier" : "D44310452A2F04EF00F63095",
+      "name" : "iOS-Training-Ryuto"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:iOS-Training-Ryuto.xcodeproj",
+        "identifier" : "D44310552A2F04F100F63095",
+        "name" : "iOS-Training-RyutoTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:iOS-Training-Ryuto.xcodeproj",
+        "identifier" : "D443105F2A2F04F100F63095",
+        "name" : "iOS-Training-RyutoUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

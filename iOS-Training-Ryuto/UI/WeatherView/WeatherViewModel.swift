@@ -15,7 +15,16 @@ final class WeatherViewModel: ObservableObject {
     private let yumemiWeatherAPIClient: YumemiWeatherAPIClientProtocol
     
     init(yumemiWeatherAPIClient: YumemiWeatherAPIClientProtocol = YumemiWeatherAPIClient()) {
-        self.yumemiWeatherAPIClient = yumemiWeatherAPIClient
+        if ProcessInfo.processInfo.arguments.contains("WeatherViewUITest_Valid") {
+            // UITest時にモックを渡す
+            self.yumemiWeatherAPIClient = YumemiWeatherAPIClientMock(
+                weather: Weather(condition: .sunny, date: Date(), maxTemperature: 30, minTemperature: 15)
+            )
+        } else if ProcessInfo.processInfo.arguments.contains("WeatherViewUITest_Error") {
+            self.yumemiWeatherAPIClient = YumemiWeatherAPIClientMock(yumemiWeatherError: .unknownError)
+        } else {
+            self.yumemiWeatherAPIClient = yumemiWeatherAPIClient
+        }
     }
     
     func fetchWeatherCondition(area: String, date: Date) {
