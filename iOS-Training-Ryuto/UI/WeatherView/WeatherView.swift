@@ -27,6 +27,17 @@ struct WeatherView: View {
             }
             .foregroundColor(.white)
         }
+        .overlay {
+            if viewModel.isLoading {
+                ZStack {
+                    Color.black
+                        .ignoresSafeArea()
+                        .opacity(0.3)
+                    ProgressView()
+                }
+                
+            }
+        }
         .alert("エラー発生", isPresented: .constant(viewModel.yumemiWeatherError != nil)) {
             Button("戻る") {
                 viewModel.yumemiWeatherError = nil
