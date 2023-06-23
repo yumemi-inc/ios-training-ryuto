@@ -55,11 +55,14 @@ struct WeatherView: View {
             // 再読み込みボタン
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
-                    viewModel.fetchWeatherCondition(area: prefecture.id, date: Date.now)
+                    Task {
+                        await viewModel.asyncFetchWeather(area: prefecture.id, date: Date())
+                    }
                 } label: {
                     Image(systemName: "arrow.clockwise")
                         .foregroundColor(.white)
                 }
+                .disabled(viewModel.isLoading)
                 .accessibilityIdentifier("weather_reload_button")
             }
         }
