@@ -38,4 +38,16 @@ final class WeatherViewModel: ObservableObject {
             }
         }
     }
+    
+    func asyncFetchWeather(area: String, date: Date) async {
+        let request = YumemiWeatherRequest(area: area, date: date)
+        guard let jsonString = try? JSONHelper.encodeToString(request) else { return }
+        do {
+            weather = try await yumemiWeatherAPIClient.asyncFetchWeather(jsonString: jsonString)
+        } catch {
+            if let error = error as? YumemiWeatherError {
+                yumemiWeatherError = error
+            }
+        }
+    }
 }
