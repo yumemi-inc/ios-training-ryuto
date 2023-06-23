@@ -13,7 +13,6 @@ final class WeatherViewModel: ObservableObject {
     @Published private(set) var weather: Weather? = nil
     @Published private(set) var isLoading: Bool = false
     @Published var yumemiWeatherError: YumemiWeatherError? = nil
-    @Published var unexpectedError: Error? = nil
     
     private let yumemiWeatherAPIClient: YumemiWeatherAPIClientProtocol
     
@@ -38,8 +37,6 @@ final class WeatherViewModel: ObservableObject {
         } catch {
             if let error = error as? YumemiWeatherError {
                 yumemiWeatherError = error
-            } else {
-                unexpectedError = error
             }
         }
     }
@@ -55,7 +52,6 @@ final class WeatherViewModel: ObservableObject {
                 yumemiWeatherError = error
             }
         }
-        
         isLoading = false
     }
 }
