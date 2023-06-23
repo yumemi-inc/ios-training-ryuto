@@ -14,26 +14,47 @@ protocol YumemiWeatherAPIClientDelegate {
 }
 
 protocol YumemiWeatherAPIClientProtocol {
-    func fetchWeatherCondition(jsonString: String) throws -> Weather?
-    func asyncFetchWeather(jsonString: String) async throws -> Weather?
+    var delegate: YumemiWeatherAPIClientDelegate? { get set }
+    func fetchWeatherCondition(jsonString: String)
+    func asyncFetchWeather(jsonString: String) async
 }
 
 final class YumemiWeatherAPIClient: YumemiWeatherAPIClientProtocol {
-    func fetchWeatherCondition(jsonString: String) throws -> Weather? {
-        let response = try YumemiWeather.fetchWeather(jsonString)
-        guard let responseData = response.data(using: .utf8) else { return nil }
-        return try JSONHelper.decode(Weather.self, data: responseData)
+    var delegate: YumemiWeatherAPIClientDelegate?
+    
+    func fetchWeatherCondition(jsonString: String) {
+        do {
+            let response = try YumemiWeather.fetchWeather(jsonString)
+            guard let responseData = response.data(using: .utf8) else {
+                delegate?.weatherFetchDidComplete(with: .success(nil))
+                return
+            }
+            let weather = try JSONHelper.decode(Weather.self, data: responseData)
+            delegate?.weatherFetchDidComplete(with: .success(weather))
+        } catch {
+            delegate?.weatherFetchDidComplete(with: .failure(error))
+        }
     }
     
-    func asyncFetchWeather(jsonString: String) async throws -> Weather? {
-        let response = try await YumemiWeather.asyncFetchWeather(jsonString)
-        guard let responseData = response.data(using: .utf8) else { return nil }
-        return try JSONHelper.decode(Weather.self, data: responseData)
+    func asyncFetchWeather(jsonString: String) async {
+        do {
+            let response = try await YumemiWeather.asyncFetchWeather(jsonString)
+            guard let responseData = response.data(using: .utf8) else {
+                delegate?.weatherFetchDidComplete(with: .success(nil))
+                return
+            }
+            let weather = try JSONHelper.decode(Weather.self, data: responseData)
+            delegate?.weatherFetchDidComplete(with: .success(weather))
+        } catch {
+            delegate?.weatherFetchDidComplete(with: .failure(error))
+        }
     }
 }
 
 #if DEBUG
 final class YumemiWeatherAPIClientMock: YumemiWeatherAPIClientProtocol {
+    var delegate: YumemiWeatherAPIClientDelegate?
+    
     let weather: Weather?
     let yumemiWeatherError: YumemiWeatherError?
     
@@ -42,18 +63,18 @@ final class YumemiWeatherAPIClientMock: YumemiWeatherAPIClientProtocol {
         self.yumemiWeatherError = yumemiWeatherError
     }
     
-    func fetchWeatherCondition(jsonString: String) throws -> Weather? {
+    func fetchWeatherCondition(jsonString: String) {
         if let yumemiWeatherError = yumemiWeatherError {
-            throw yumemiWeatherError
+            delegate?.weatherFetchDidComplete(with: .failure(yumemiWeatherError))
         }
-        return weather
+        delegate?.weatherFetchDidComplete(with: .success(weather))
     }
     
-    func asyncFetchWeather(jsonString: String) async throws -> Weather? {
+    func asyncFetchWeather(jsonString: String) async {
         if let yumemiWeatherError = yumemiWeatherError {
-            throw yumemiWeatherError
+            delegate?.weatherFetchDidComplete(with: .failure(yumemiWeatherError))
         }
-        return weather
+        delegate?.weatherFetchDidComplete(with: .success(weather))
     }
 }
 #endif
