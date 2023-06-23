@@ -12,23 +12,21 @@ import YumemiWeather
 final class WeatherViewModelTest: XCTestCase {
     var viewModel: WeatherViewModel!
     
-    func testFetchWeatherCondition() {
-        XCTContext.runActivity(named: "正常") { _ in
-            viewModel = WeatherViewModel(yumemiWeatherAPIClient: YumemiWeatherAPIClientMock())
-            viewModel.fetchWeatherCondition(area: "東京", date: Date())
-            
-            XCTAssertNil(viewModel.yumemiWeatherError)
-            XCTAssertEqual(viewModel.weather?.condition, YumemiWeatherSampleData.sampleData.condition)
-            XCTAssertEqual(viewModel.weather?.maxTemperature, YumemiWeatherSampleData.sampleData.maxTemperature)
-            XCTAssertEqual(viewModel.weather?.minTemperature, YumemiWeatherSampleData.sampleData.minTemperature)
-        }
+    func testFetchWeatherCondition_Valid() {
+        viewModel = WeatherViewModel(yumemiWeatherAPIClient: YumemiWeatherAPIClientMock())
+        viewModel.fetchWeatherCondition(area: "東京", date: Date())
         
-        XCTContext.runActivity(named: "エラー") { _ in
-            viewModel = WeatherViewModel(yumemiWeatherAPIClient: YumemiWeatherAPIClientMock(yumemiWeatherError: .unknownError))
-            viewModel.fetchWeatherCondition(area: "東京", date: Date())
-            
-            XCTAssertNil(viewModel.weather)
-            XCTAssertEqual(viewModel.yumemiWeatherError, .unknownError)
-        }
+        XCTAssertNil(viewModel.yumemiWeatherError)
+        XCTAssertEqual(viewModel.weather?.condition, YumemiWeatherSampleData.sampleData.condition)
+        XCTAssertEqual(viewModel.weather?.maxTemperature, YumemiWeatherSampleData.sampleData.maxTemperature)
+        XCTAssertEqual(viewModel.weather?.minTemperature, YumemiWeatherSampleData.sampleData.minTemperature)
+    }
+    
+    func testFetchWeatherCondition_Error() {
+        viewModel = WeatherViewModel(yumemiWeatherAPIClient: YumemiWeatherAPIClientMock(yumemiWeatherError: .unknownError))
+        viewModel.fetchWeatherCondition(area: "東京", date: Date())
+        
+        XCTAssertNil(viewModel.weather)
+        XCTAssertEqual(viewModel.yumemiWeatherError, .unknownError)
     }
 }
