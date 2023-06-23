@@ -9,6 +9,7 @@ import SwiftUI
 
 struct WeatherView: View {
     let prefecture: Prefecture
+    @Environment(\.dismiss) var dismiss
     @StateObject private var viewModel = WeatherViewModel()
     
     var body: some View {
@@ -27,6 +28,10 @@ struct WeatherView: View {
             .foregroundColor(.white)
         }
         .alert("エラー発生", isPresented: .constant(viewModel.yumemiWeatherError != nil)) {
+            Button("戻る") {
+                viewModel.yumemiWeatherError = nil
+                dismiss()
+            }
             Button("OK") { viewModel.yumemiWeatherError = nil }
         } message: {
             Text(viewModel.yumemiWeatherError?.localizedDescription ?? "")
