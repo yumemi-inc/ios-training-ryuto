@@ -20,3 +20,22 @@ final class YumemiWeatherAPIClient: YumemiWeatherAPIClientProtocol {
         return try JSONHelper.decode(Weather.self, data: responseData)
     }
 }
+
+#if DEBUG
+final class YumemiWeatherAPIClientMock: YumemiWeatherAPIClientProtocol {
+    let weather: Weather?
+    let yumemiWeatherError: YumemiWeatherError?
+    
+    init(weather: Weather? = nil, yumemiWeatherError: YumemiWeatherError? = nil) {
+        self.weather = weather
+        self.yumemiWeatherError = yumemiWeatherError
+    }
+    
+    func fetchWeatherCondition(jsonString: String) throws -> Weather? {
+        if let yumemiWeatherError = yumemiWeatherError {
+            throw yumemiWeatherError
+        }
+        return weather
+    }
+}
+#endif
