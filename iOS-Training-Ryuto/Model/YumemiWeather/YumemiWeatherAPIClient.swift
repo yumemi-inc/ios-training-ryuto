@@ -9,6 +9,10 @@ import Foundation
 import Combine
 import YumemiWeather
 
+protocol YumemiWeatherAPIClientDelegate {
+    func weatherFetchDidComplete(with result: Result<Weather?, Error>)
+}
+
 protocol YumemiWeatherAPIClientProtocol {
     func fetchWeatherCondition(jsonString: String) throws -> Weather?
     func asyncFetchWeather(jsonString: String) async throws -> Weather?
