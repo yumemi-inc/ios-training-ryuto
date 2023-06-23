@@ -13,7 +13,6 @@ final class WeatherViewUITest: XCTestCase {
     
     override func setUp() {
         app = XCUIApplication()
-        app.launch()
     }
     
     override func tearDown() {
@@ -22,28 +21,26 @@ final class WeatherViewUITest: XCTestCase {
     }
     
     func testWeatherImage() {
+        app.launchArguments = ["WeatherViewUITest_Valid"]
+        app.launch()
+        
         let prefectureListView = PrefectureListViewPage(application: app)
         let weatherView = prefectureListView.goWeatherView()
-
-        weatherView.reloadScreenWithoutError()
-
+        
         switch weatherView.conditionTextLabel {
         case "晴れ":
             XCTAssertEqual(weatherView.conditionImageLabel, "Brightness Higher")
-        case "曇り":
-            XCTAssertEqual(weatherView.conditionImageLabel, "Mostly Cloudy")
-        case "雨":
-            XCTAssertEqual(weatherView.conditionImageLabel, "Rain")
         default:
             XCTFail()
         }
     }
     
     func testErrorAlert() {
+        app.launchArguments = ["WeatherViewUITest_Error"]
+        app.launch()
+        
         let prefectureListView = PrefectureListViewPage(application: app)
         let weatherView = prefectureListView.goWeatherView()
-        
-        weatherView.reloadScreenUntillError()
         
         XCTAssertTrue(weatherView.existsAlertButton)
     }
