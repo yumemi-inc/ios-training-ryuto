@@ -9,6 +9,7 @@ import SwiftUI
 
 struct WeatherView: View {
     let prefecture: Prefecture
+    @StateObject private var viewModel = WeatherViewModel()
     
     var body: some View {
         ZStack {
@@ -17,16 +18,22 @@ struct WeatherView: View {
             
             VStack(spacing: 100) {
                 weatherInformationView()
-                weatherDetailView()
+                if let weather = viewModel.weather {
+                    weatherDetailView(weather: weather)
+                }
+                
                 Spacer()
             }
             .foregroundColor(.white)
+        }
+        .onAppear {
+            viewModel.fetchWeatherCondition(area: prefecture.id, date: Date.now)
         }
         .toolbar {
             // 再読み込みボタン
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
-                    
+                    viewModel.fetchWeatherCondition(area: prefecture.id, date: Date.now)
                 } label: {
                     Image(systemName: "arrow.clockwise")
                         .foregroundColor(.white)
@@ -50,19 +57,21 @@ extension WeatherView {
                 .font(.title)
                 .fontWeight(.bold)
             
-            Text("2023年6月7日の天気")
-                .font(.title2)
+            if let weather = viewModel.weather {
+                Text(DateHelper.formatToString(date: weather.date, dateFormat: "yyyy年M月d日") + "の天気")
+                    .font(.title2)
+            }
         }
     }
     
-    private func weatherDetailView() -> some View {
+    private func weatherDetailView(weather: Weather) -> some View {
         VStack(spacing: 50) {
             HStack(spacing: 20) {
-                    Image(systemName: "sun.max.fill")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 150, height: 150)
-                        .foregroundColor(.orange)
+                Image(systemName: weather.condition.imageName)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 150, height: 150)
+                    .foregroundColor(weather.condition.imageColor)
                 
                 VStack(alignment: .leading, spacing: 10) {
                     HStack(spacing: 3) {
@@ -70,7 +79,8 @@ extension WeatherView {
                             .resizable()
                             .scaledToFit()
                             .frame(width: 20, height: 20)
-                        Text("最高: 30°")
+                        
+                        Text("最高: \(weather.maxTemperature)°")
                     }
                     .foregroundColor(.red)
                     
@@ -79,15 +89,40 @@ extension WeatherView {
                             .resizable()
                             .scaledToFit()
                             .frame(width: 20, height: 20)
-                        Text("最低: 15°")
+                        
+                        Text("最低: \(weather.minTemperature)°")
                     }
                     .foregroundColor(.indigo)
                 }
                 .font(.system(size: 20))
             }
             
-            Text("晴れ")
+            Text(weather.condition.localized)
                 .font(.system(size: 25))
+        }
+    }
+}
+
+private extension WeatherCondition {
+    var imageName: String {
+        switch self {
+        case .sunny:
+            return "sun.max.fill"
+        case .cloudy:
+            return "cloud.fill"
+        case .rainy:
+            return "cloud.rain.fill"
+        }
+    }
+    
+    var imageColor: Color {
+        switch self {
+        case .sunny:
+            return .orange
+        case .cloudy:
+            return .gray
+        case .rainy:
+            return .blue
         }
     }
 }
