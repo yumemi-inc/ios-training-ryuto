@@ -25,5 +25,12 @@ final class YumemiWeatherAPIClientMock: YumemiWeatherAPIClientProtocol {
         }
         return weather
     }
+    
+    func asyncFetchWeather(jsonString: String) async throws -> Weather? {
+        if let error = yumemiWeatherError {
+            throw error
+        }
+        return weather
+    }
 }
 
