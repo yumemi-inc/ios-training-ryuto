@@ -36,8 +36,8 @@ struct WeatherView: View {
         } message: {
             Text(viewModel.yumemiWeatherError?.localizedDescription ?? "")
         }
-        .onAppear {
-            viewModel.fetchWeatherCondition(area: prefecture.id, date: Date.now)
+        .task {
+            await viewModel.asyncFetchWeather(area: prefecture.id, date: Date())
         }
         .toolbar {
             // 再読み込みボタン
