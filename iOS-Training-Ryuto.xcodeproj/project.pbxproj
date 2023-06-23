@@ -208,12 +208,10 @@
 		D44310632A2F04F100F63095 /* iOS-Training-RyutoUITests */ = {
 			isa = PBXGroup;
 			children = (
+				D4C594562A453546005DD0B3 /* PageObject */,
 				D44310642A2F04F100F63095 /* iOS_Training_RyutoUITests.swift */,
 				D45292F92A41ADF800912676 /* WeatherViewUITest.swift */,
 				D44310662A2F04F100F63095 /* iOS_Training_RyutoUITestsLaunchTests.swift */,
-				D4082E832A42C10A005BD44C /* PageObject.swift */,
-				D4082E862A42C163005BD44C /* PrefectureListViewPage.swift */,
-				D4082E892A42CEFB005BD44C /* WeatherViewPage.swift */,
 			);
 			path = "iOS-Training-RyutoUITests";
 			sourceTree = "<group>";
@@ -266,6 +264,16 @@
 				D48F10AC2A3BFD2F001727D0 /* YumemiWeatherError.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		D4C594562A453546005DD0B3 /* PageObject */ = {
+			isa = PBXGroup;
+			children = (
+				D4082E832A42C10A005BD44C /* PageObject.swift */,
+				D4082E862A42C163005BD44C /* PrefectureListViewPage.swift */,
+				D4082E892A42CEFB005BD44C /* WeatherViewPage.swift */,
+			);
+			path = PageObject;
 			sourceTree = "<group>";
 		};
 		D4FB92B12A3065C7000DCFC2 /* WeatherView */ = {
