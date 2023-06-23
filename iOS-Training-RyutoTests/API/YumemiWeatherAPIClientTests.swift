@@ -17,6 +17,7 @@ final class YumemiWeatherAPIClientTests: XCTestCase {
     
     override func setUp() {
         client = YumemiWeatherAPIClient()
+        client.delegate = self
     }
     
     func testFetchWeatherCondition_ValidJSON() {
@@ -27,20 +28,22 @@ final class YumemiWeatherAPIClientTests: XCTestCase {
             }
             """
         
-        do {
-            weather = try client.fetchWeatherCondition(jsonString: jsonString)
-        } catch {
-            if let error = error as? YumemiWeatherError {
-                self.error = error
+        let expectation = XCTestExpectation(description: "非同期処理")
+        
+        client.fetchWeatherCondition(jsonString: jsonString)
+        
+        Task { @MainActor in
+            if let weather = weather {
+                XCTAssertTrue(true)
+            } else {
+                XCTAssertNotNil(error)
+                XCTAssertEqual(error, .unknownError)
             }
+            
+            expectation.fulfill()
         }
         
-        if let weather = weather {
-            XCTAssertTrue(true)
-        } else {
-            XCTAssertNotNil(error)
-            XCTAssertEqual(error, .unknownError)
-        }
+        wait(for: [expectation], timeout: 3.0)
     }
     
     func testFetchWeatherCondition_InvalidJSON() {
@@ -49,18 +52,18 @@ final class YumemiWeatherAPIClientTests: XCTestCase {
                 "area": tokyo,
             }
             """
-            
-            do {
-                weather = try client.fetchWeatherCondition(jsonString: jsonString)
-            } catch {
-                if let error = error as? YumemiWeatherError {
-                    self.error = error
-                }
-            }
+        let expectation = XCTestExpectation(description: "非同期処理")
 
+        client.fetchWeatherCondition(jsonString: jsonString)
+        
+        Task { @MainActor in
             XCTAssertNil(weather)
             XCTAssertNotNil(error)
             XCTAssertEqual(error, .invalidParameterError)
+            
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 3.0)
     }
     
     
@@ -72,20 +75,22 @@ final class YumemiWeatherAPIClientTests: XCTestCase {
             }
             """
         
-        do {
-            weather = try await client.asyncFetchWeather(jsonString: jsonString)
-        } catch {
-            if let error = error as? YumemiWeatherError {
-                self.error = error
+        let expectation = XCTestExpectation(description: "非同期処理")
+        
+        await client.asyncFetchWeather(jsonString: jsonString)
+        
+        Task { @MainActor in
+            if let weather = weather {
+                XCTAssertTrue(true)
+            } else {
+                XCTAssertNotNil(error)
+                XCTAssertEqual(error, .unknownError)
             }
+            
+            expectation.fulfill()
         }
         
-        if let weather = weather {
-            XCTAssertTrue(true)
-        } else {
-            XCTAssertNotNil(error)
-            XCTAssertEqual(error, .unknownError)
-        }
+        await fulfillment(of: [expectation], timeout: 5.0)
     }
     
     func testAsyncFetchWeather_InvalidJSON() async {
@@ -95,18 +100,30 @@ final class YumemiWeatherAPIClientTests: XCTestCase {
             }
             """
         
-        do {
-            weather = try await client.asyncFetchWeather(jsonString: jsonString)
-        } catch {
+        let expectation = XCTestExpectation(description: "非同期処理")
+        
+        await client.asyncFetchWeather(jsonString: jsonString)
+        
+        Task { @MainActor in
+            XCTAssertNil(weather)
+            XCTAssertNotNil(error)
+            XCTAssertEqual(error, .invalidParameterError)
+            expectation.fulfill()
+        }
+        
+        await fulfillment(of: [expectation], timeout: 5.0)
+    }
+}
+
+extension YumemiWeatherAPIClientTests: YumemiWeatherAPIClientDelegate {
+    func weatherFetchDidComplete(with result: Result<Weather?, Error>) {
+        switch result {
+        case .success(let weather):
+            self.weather = weather
+        case .failure(let error):
             if let error = error as? YumemiWeatherError {
                 self.error = error
             }
         }
-        
-        XCTAssertNil(weather)
-        XCTAssertNotNil(error)
-        XCTAssertEqual(error, .invalidParameterError)
-        
     }
 }
-
