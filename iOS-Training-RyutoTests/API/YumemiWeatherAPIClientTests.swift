@@ -19,39 +19,36 @@ final class YumemiWeatherAPIClientTests: XCTestCase {
         client = YumemiWeatherAPIClient()
     }
     
-    func testFetchWeatherCondition() {
-        XCTContext.runActivity(named: "有効なJSON") { ＿ in
-            let jsonString = """
-                {
-                    "area": "tokyo",
-                    "date": "2023-06-16T12:00:00+09:00"
-                }
-                """
-            
-            do {
-                weather = try client.fetchWeatherCondition(jsonString: jsonString)
-            } catch {
-                if let error = error as? YumemiWeatherError {
-                    self.error = error
-                }
+    func testFetchWeatherCondition_ValidJSON() {
+        let jsonString = """
+            {
+                "area": "tokyo",
+                "date": "2023-06-16T12:00:00+09:00"
             }
-            
-            if let weather = weather {
-                XCTAssertTrue(true)
-            } else {
-                XCTAssertNotNil(error)
-                XCTAssertEqual(error, .unknownError)
+            """
+        
+        do {
+            weather = try client.fetchWeatherCondition(jsonString: jsonString)
+        } catch {
+            if let error = error as? YumemiWeatherError {
+                self.error = error
             }
         }
         
-        weather = nil
-        
-        XCTContext.runActivity(named: "無効なJSON") { ＿ in
-            let jsonString = """
-                    {
-                        "area": tokyo,
-                    }
-                    """
+        if let weather = weather {
+            XCTAssertTrue(true)
+        } else {
+            XCTAssertNotNil(error)
+            XCTAssertEqual(error, .unknownError)
+        }
+    }
+    
+    func testFetchWeatherCondition_InvalidJSON() {
+        let jsonString = """
+            {
+                "area": tokyo,
+            }
+            """
             
             do {
                 weather = try client.fetchWeatherCondition(jsonString: jsonString)
@@ -64,6 +61,5 @@ final class YumemiWeatherAPIClientTests: XCTestCase {
             XCTAssertNil(weather)
             XCTAssertNotNil(error)
             XCTAssertEqual(error, .invalidParameterError)
-        }
     }
 }
