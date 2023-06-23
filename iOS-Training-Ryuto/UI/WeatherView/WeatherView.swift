@@ -35,7 +35,6 @@ struct WeatherView: View {
                         .opacity(0.3)
                     ProgressView()
                 }
-                
             }
         }
         .alert("エラー発生", isPresented: .constant(viewModel.yumemiWeatherError != nil)) {
