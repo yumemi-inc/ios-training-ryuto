@@ -11,9 +11,11 @@ import YumemiWeather
 @testable import iOS_Training_Ryuto
 
 final class YumemiWeatherAPIClientMock: YumemiWeatherAPIClientProtocol {
+    let weather: Weather?
     let yumemiWeatherError: YumemiWeatherError?
     
-    init(yumemiWeatherError: YumemiWeatherError? = nil) {
+    init(weather: Weather? = nil, yumemiWeatherError: YumemiWeatherError? = nil) {
+        self.weather = weather
         self.yumemiWeatherError = yumemiWeatherError
     }
     
@@ -21,8 +23,7 @@ final class YumemiWeatherAPIClientMock: YumemiWeatherAPIClientProtocol {
         if let error = yumemiWeatherError {
             throw error
         }
-        
-        return YumemiWeatherSampleData.sampleData
+        return weather
     }
 }
 

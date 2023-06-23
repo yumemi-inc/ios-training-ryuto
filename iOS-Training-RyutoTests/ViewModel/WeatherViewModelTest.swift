@@ -13,7 +13,7 @@ final class WeatherViewModelTest: XCTestCase {
     var viewModel: WeatherViewModel!
     
     func testFetchWeatherCondition_Valid() {
-        viewModel = WeatherViewModel(yumemiWeatherAPIClient: YumemiWeatherAPIClientMock())
+        viewModel = WeatherViewModel(yumemiWeatherAPIClient: YumemiWeatherAPIClientMock(weather: YumemiWeatherSampleData.sampleData))
         viewModel.fetchWeatherCondition(area: "東京", date: Date())
         
         XCTAssertNil(viewModel.yumemiWeatherError)
