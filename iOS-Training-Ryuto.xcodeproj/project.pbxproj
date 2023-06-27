@@ -115,6 +115,8 @@
 		D462F26F2A4AAB5A0011318E /* WeatherWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = WeatherWidget.intentdefinition; sourceTree = "<group>"; };
 		D462F2702A4AAB5C0011318E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D462F2722A4AAB5C0011318E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D462F27D2A4AABAD0011318E /* iOS-Training-Ryuto.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "iOS-Training-Ryuto.entitlements"; sourceTree = "<group>"; };
+		D462F27E2A4AABD80011318E /* WeatherWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WeatherWidgetExtension.entitlements; sourceTree = "<group>"; };
 		D46A09662A42E7930081478C /* iOS-Training-Ryuto.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "iOS-Training-Ryuto.xctestplan"; sourceTree = "<group>"; };
 		D48F10AC2A3BFD2F001727D0 /* YumemiWeatherError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YumemiWeatherError.swift; sourceTree = "<group>"; };
 		D48F10B32A3C1468001727D0 /* YumemiWeatherAPIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YumemiWeatherAPIClientTests.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 		D443103D2A2F04EF00F63095 = {
 			isa = PBXGroup;
 			children = (
+				D462F27E2A4AABD80011318E /* WeatherWidgetExtension.entitlements */,
 				D46A09662A42E7930081478C /* iOS-Training-Ryuto.xctestplan */,
 				D44310482A2F04EF00F63095 /* iOS-Training-Ryuto */,
 				D44310592A2F04F100F63095 /* iOS-Training-RyutoTests */,
@@ -225,6 +228,7 @@
 		D44310482A2F04EF00F63095 /* iOS-Training-Ryuto */ = {
 			isa = PBXGroup;
 			children = (
+				D462F27D2A4AABAD0011318E /* iOS-Training-Ryuto.entitlements */,
 				D44310492A2F04EF00F63095 /* iOS_Training_RyutoApp.swift */,
 				D48F10AA2A3BFD1C001727D0 /* Extension */,
 				D422ECB02A32B926005586AD /* Helper */,
@@ -735,6 +739,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "iOS-Training-Ryuto/iOS-Training-Ryuto.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iOS-Training-Ryuto/Preview Content\"";
@@ -765,6 +770,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "iOS-Training-Ryuto/iOS-Training-Ryuto.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iOS-Training-Ryuto/Preview Content\"";
@@ -870,6 +876,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = WeatherWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = D8V5XWF3J2;
@@ -897,6 +904,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = WeatherWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = D8V5XWF3J2;
