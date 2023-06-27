@@ -35,6 +35,11 @@
 		D462F2732A4AAB5C0011318E /* WeatherWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = D462F26F2A4AAB5A0011318E /* WeatherWidget.intentdefinition */; };
 		D462F2742A4AAB5C0011318E /* WeatherWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = D462F26F2A4AAB5A0011318E /* WeatherWidget.intentdefinition */; };
 		D462F2772A4AAB5C0011318E /* WeatherWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D462F2622A4AAB5A0011318E /* WeatherWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D462F2822A4AB1620011318E /* YumemiWeatherAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FB92BC2A307F0A000DCFC2 /* YumemiWeatherAPIClient.swift */; };
+		D462F2842A4AB1720011318E /* YumemiWeather in Frameworks */ = {isa = PBXBuildFile; productRef = D462F2832A4AB1720011318E /* YumemiWeather */; };
+		D462F2862A4AB1980011318E /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FB92B62A3066BF000DCFC2 /* Weather.swift */; };
+		D462F2872A4AB1980011318E /* WeatherCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FB92B82A3078A3000DCFC2 /* WeatherCondition.swift */; };
+		D462F2892A4AB1A20011318E /* JSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FB92BE2A3083D3000DCFC2 /* JSONHelper.swift */; };
 		D48F10AD2A3BFD2F001727D0 /* YumemiWeatherError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F10AC2A3BFD2F001727D0 /* YumemiWeatherError.swift */; };
 		D48F10B42A3C1468001727D0 /* YumemiWeatherAPIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F10B32A3C1468001727D0 /* YumemiWeatherAPIClientTests.swift */; };
 		D48F10BC2A3C3CCB001727D0 /* YumemiWeatherAPIClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F10BB2A3C3CCB001727D0 /* YumemiWeatherAPIClientMock.swift */; };
@@ -157,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D462F2672A4AAB5A0011318E /* SwiftUI.framework in Frameworks */,
+				D462F2842A4AB1720011318E /* YumemiWeather in Frameworks */,
 				D462F2652A4AAB5A0011318E /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -447,6 +453,9 @@
 			dependencies = (
 			);
 			name = WeatherWidgetExtension;
+			packageProductDependencies = (
+				D462F2832A4AB1720011318E /* YumemiWeather */,
+			);
 			productName = WeatherWidgetExtension;
 			productReference = D462F2622A4AAB5A0011318E /* WeatherWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -587,6 +596,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D462F2892A4AB1A20011318E /* JSONHelper.swift in Sources */,
+				D462F2862A4AB1980011318E /* Weather.swift in Sources */,
+				D462F2872A4AB1980011318E /* WeatherCondition.swift in Sources */,
+				D462F2822A4AB1620011318E /* YumemiWeatherAPIClient.swift in Sources */,
 				D462F26A2A4AAB5A0011318E /* WeatherWidgetBundle.swift in Sources */,
 				D462F26C2A4AAB5A0011318E /* WeatherWidgetLiveActivity.swift in Sources */,
 				D462F26E2A4AAB5A0011318E /* WeatherWidget.swift in Sources */,
@@ -1005,6 +1018,11 @@
 		D40CA1F22A385ECE009BE8AA /* RswiftGenerateInternalResources */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = "plugin:RswiftGenerateInternalResources";
+		};
+		D462F2832A4AB1720011318E /* YumemiWeather */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D4FB92B32A306679000DCFC2 /* XCRemoteSwiftPackageReference "ios-training" */;
+			productName = YumemiWeather;
 		};
 		D4FB92B42A306679000DCFC2 /* YumemiWeather */ = {
 			isa = XCSwiftPackageProductDependency;
