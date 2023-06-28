@@ -66,6 +66,7 @@ final class YumemiWeatherAPIClientTests: XCTestCase {
         wait(for: [expectation], timeout: 3.0)
     }
     
+    
     func testAsyncFetchWeather_ValidJSON() async {
         let jsonString = """
             {
