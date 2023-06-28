@@ -6,11 +6,9 @@
 //
 
 import Foundation
-import YumemiWeather
 
 final class WeatherViewModel: ObservableObject {
     @Published private(set) var weather: Weather? = nil
-    @Published var yumemiWeatherError: YumemiWeatherError? = nil
     
     private let yumemiWeatherAPIClient: YumemiWeatherAPIClientProtocol
     
@@ -21,12 +19,7 @@ final class WeatherViewModel: ObservableObject {
     func fetchWeatherCondition(area: String, date: Date) {
         let request = YumemiWeatherRequest(area: area, date: date)
         guard let jsonString = try? JSONHelper.encodeToString(request) else { return }
-        do {
-            weather = try yumemiWeatherAPIClient.fetchWeatherCondition(jsonString: jsonString)
-        } catch {
-            if let error = error as? YumemiWeatherError {
-                yumemiWeatherError = error
-            }
-        }
+        weather = try? yumemiWeatherAPIClient.fetchWeatherCondition(jsonString: jsonString)
     }
+
 }
