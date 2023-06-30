@@ -27,6 +27,17 @@ struct WeatherView: View {
             }
             .foregroundColor(.white)
         }
+        .overlay {
+            if viewModel.isLoading {
+                ZStack {
+                    Color.black
+                        .ignoresSafeArea()
+                        .opacity(0.3)
+                    ProgressView()
+                }
+                
+            }
+        }
         .alert("エラー発生", isPresented: .constant(viewModel.yumemiWeatherError != nil)) {
             Button("戻る") {
                 viewModel.yumemiWeatherError = nil
@@ -36,18 +47,21 @@ struct WeatherView: View {
         } message: {
             Text(viewModel.yumemiWeatherError?.localizedDescription ?? "")
         }
-        .onAppear {
-            viewModel.fetchWeatherCondition(area: prefecture.id, date: Date.now)
+        .task {
+            await viewModel.asyncFetchWeather(area: prefecture.id, date: Date())
         }
         .toolbar {
             // 再読み込みボタン
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
-                    viewModel.fetchWeatherCondition(area: prefecture.id, date: Date.now)
+                    Task {
+                        await viewModel.asyncFetchWeather(area: prefecture.id, date: Date())
+                    }
                 } label: {
                     Image(systemName: "arrow.clockwise")
                         .foregroundColor(.white)
                 }
+                .disabled(viewModel.isLoading)
             }
         }
     }

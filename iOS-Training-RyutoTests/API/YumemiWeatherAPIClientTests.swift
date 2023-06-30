@@ -62,4 +62,50 @@ final class YumemiWeatherAPIClientTests: XCTestCase {
             XCTAssertNotNil(error)
             XCTAssertEqual(error, .invalidParameterError)
     }
+    
+    func testAsyncFetchWeather_ValidJSON() async {
+        let jsonString = """
+            {
+                "area": "tokyo",
+                "date": "2023-06-16T12:00:00+09:00"
+            }
+            """
+        
+        do {
+            weather = try await client.asyncFetchWeather(jsonString: jsonString)
+        } catch {
+            if let error = error as? YumemiWeatherError {
+                self.error = error
+            }
+        }
+        
+        if let weather = weather {
+            XCTAssertTrue(true)
+        } else {
+            XCTAssertNotNil(error)
+            XCTAssertEqual(error, .unknownError)
+        }
+    }
+    
+    func testAsyncFetchWeather_InvalidJSON() async {
+        let jsonString = """
+            {
+                "area": tokyo,
+            }
+            """
+        
+        do {
+            weather = try await client.asyncFetchWeather(jsonString: jsonString)
+        } catch {
+            if let error = error as? YumemiWeatherError {
+                self.error = error
+            }
+        }
+        
+        XCTAssertNil(weather)
+        XCTAssertNotNil(error)
+        XCTAssertEqual(error, .invalidParameterError)
+        
+    }
 }
+

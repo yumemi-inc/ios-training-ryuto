@@ -9,6 +9,7 @@ import XCTest
 import YumemiWeather
 @testable import iOS_Training_Ryuto
 
+@MainActor
 final class WeatherViewModelTest: XCTestCase {
     var viewModel: WeatherViewModel!
     
@@ -25,6 +26,24 @@ final class WeatherViewModelTest: XCTestCase {
     func testFetchWeatherCondition_Error() {
         viewModel = WeatherViewModel(yumemiWeatherAPIClient: YumemiWeatherAPIClientMock(yumemiWeatherError: .unknownError))
         viewModel.fetchWeatherCondition(area: "東京", date: Date())
+        
+        XCTAssertNil(viewModel.weather)
+        XCTAssertEqual(viewModel.yumemiWeatherError, .unknownError)
+    }
+    
+    func testAsyncFetchWeather_Valid() async {
+        viewModel = WeatherViewModel(yumemiWeatherAPIClient: YumemiWeatherAPIClientMock(weather: YumemiWeatherSampleData.sampleData))
+        await viewModel.asyncFetchWeather(area: "東京", date: Date())
+        
+        XCTAssertNil(viewModel.yumemiWeatherError)
+        XCTAssertEqual(viewModel.weather?.condition, YumemiWeatherSampleData.sampleData.condition)
+        XCTAssertEqual(viewModel.weather?.maxTemperature, YumemiWeatherSampleData.sampleData.maxTemperature)
+        XCTAssertEqual(viewModel.weather?.minTemperature, YumemiWeatherSampleData.sampleData.minTemperature)
+    }
+    
+    func testAsyncFetchWeather_Error() async {
+        viewModel = WeatherViewModel(yumemiWeatherAPIClient: YumemiWeatherAPIClientMock(yumemiWeatherError: .unknownError))
+        await viewModel.asyncFetchWeather(area: "東京", date: Date())
         
         XCTAssertNil(viewModel.weather)
         XCTAssertEqual(viewModel.yumemiWeatherError, .unknownError)
