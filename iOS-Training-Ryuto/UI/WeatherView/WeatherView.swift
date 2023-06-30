@@ -10,6 +10,7 @@ import SwiftUI
 struct WeatherView: View {
     let prefecture: Prefecture
     @Environment(\.dismiss) var dismiss
+    @Environment(\.scenePhase) private var scenePhase
     @StateObject private var viewModel = WeatherViewModel()
     
     var body: some View {
@@ -49,6 +50,14 @@ struct WeatherView: View {
         }
         .task {
             await viewModel.asyncFetchWeather(area: prefecture.id, date: Date())
+        }
+        .onChange(of: scenePhase) { phase in
+            if phase == .active {
+                viewModel.yumemiWeatherError = nil
+                Task {
+                    await viewModel.asyncFetchWeather(area: prefecture.id, date: Date())
+                }
+            }
         }
         .toolbar {
             // 再読み込みボタン
