@@ -20,7 +20,7 @@ protocol YumemiWeatherAPIClientProtocol {
 }
 
 final class YumemiWeatherAPIClient: YumemiWeatherAPIClientProtocol {
-    var delegate: YumemiWeatherAPIClientDelegate?
+    weak var delegate: YumemiWeatherAPIClientDelegate?
     
     func fetchWeatherCondition(jsonString: String) {
         do {
@@ -53,7 +53,7 @@ final class YumemiWeatherAPIClient: YumemiWeatherAPIClientProtocol {
 
 #if DEBUG
 final class YumemiWeatherAPIClientMock: YumemiWeatherAPIClientProtocol {
-    var delegate: YumemiWeatherAPIClientDelegate?
+    weak var delegate: YumemiWeatherAPIClientDelegate?
     
     let weather: Weather?
     let yumemiWeatherError: YumemiWeatherError?
