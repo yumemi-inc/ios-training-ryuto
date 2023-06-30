@@ -11,6 +11,7 @@ import YumemiWeather
 @testable import iOS_Training_Ryuto
 
 final class YumemiWeatherAPIClientMock: YumemiWeatherAPIClientProtocol {
+    var delegate: YumemiWeatherAPIClientDelegate?
     let weather: Weather?
     let yumemiWeatherError: YumemiWeatherError?
     
@@ -19,18 +20,18 @@ final class YumemiWeatherAPIClientMock: YumemiWeatherAPIClientProtocol {
         self.yumemiWeatherError = yumemiWeatherError
     }
     
-    func fetchWeatherCondition(jsonString: String) throws -> Weather? {
+    func fetchWeatherCondition(jsonString: String) {
         if let error = yumemiWeatherError {
-            throw error
+            delegate?.weatherFetchDidComplete(with: .failure(error))
         }
-        return weather
+        delegate?.weatherFetchDidComplete(with: .success(weather))
     }
     
-    func asyncFetchWeather(jsonString: String) async throws -> Weather? {
+    func asyncFetchWeather(jsonString: String) async {
         if let error = yumemiWeatherError {
-            throw error
+            delegate?.weatherFetchDidComplete(with: .failure(error))
         }
-        return weather
+        delegate?.weatherFetchDidComplete(with: .success(weather))
     }
 }
 
