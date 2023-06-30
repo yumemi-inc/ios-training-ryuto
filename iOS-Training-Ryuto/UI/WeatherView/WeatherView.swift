@@ -53,6 +53,7 @@ struct WeatherView: View {
         }
         .onChange(of: scenePhase) { phase in
             if phase == .active {
+                viewModel.yumemiWeatherError = nil
                 Task {
                     await viewModel.asyncFetchWeather(area: prefecture.id, date: Date())
                 }
