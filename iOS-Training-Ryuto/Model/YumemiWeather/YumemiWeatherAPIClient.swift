@@ -9,7 +9,7 @@ import Foundation
 import Combine
 import YumemiWeather
 
-protocol YumemiWeatherAPIClientDelegate {
+protocol YumemiWeatherAPIClientDelegate: AnyObject {
     func weatherFetchDidComplete(with result: Result<Weather?, Error>)
 }
 
